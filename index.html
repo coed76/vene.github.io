@@ -1,1 +1,93 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de Licencias - IBOPLAYER</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77d5d9 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        .pricing-table {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .pricing-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 20px;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .pricing-card h3 {
+            color: #333;
+        }
+        .pricing-card p {
+            color: #666;
+        }
+        .price {
+            font-size: 24px;
+            color: #77d5d9;
+        }
+        @media (max-width: 768px) {
+            .pricing-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Venta de Licencias - IBOPLAYER</h1>
+        </div>
+    </header>
+    <div class="container">
+        <section class="pricing-table">
+            <div class="pricing-card">
+                <h3>PARA 1 EQUIPO</h3>
+                <p>Licencia para:</p>
+                <p class="price">1 año - $10 USD</p>
+                <p class="price">Licencia permanente - $15 USD</p>
+            </div>
+            <div class="pricing-card">
+                <h3>PARA 2 EQUIPOS</h3>
+                <p>Licencia para 2 equipos</p>
+                <p class="price">1 año - $18 USD (ahorro: $2)</p>
+                <p class="price">Licencia permanente - $28 USD (ahorro: $2)</p>
+            </div>
+            <div class="pricing-card">
+                <h3>PARA 3 EQUIPOS</h3>
+                <p>Licencia para 3 equipos</p>
+                <p class="price">1 año - $24 USD (ahorro: $3)</p>
+                <p class="price">Licencia permanente - $39 USD (ahorro: $3)</p>
+            </div>
+        </section>
+        <p>Precio NO INCLUYE lista o servicio de CONTENIDOS.</p>
+    </div>
+</body>
+</html>
