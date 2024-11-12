@@ -1,128 +1,100 @@
 /* General */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+    background-color: #f3f4f6;
+    color: #333;
     font-family: Arial, sans-serif;
 }
-body {
-    color: #333;
-    background-color: #f8f9fa;
-}
-a {
-    text-decoration: none;
-    color: inherit;
-}
 
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #007bff;
-    color: #fff;
-}
-header .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-header nav a {
-    margin: 0 15px;
-    color: #fff;
-}
-header .cta-button {
-    background-color: #28a745;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* Bienvenida */
-.bienvenida {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #e9ecef;
-}
-.bienvenida h1 {
-    font-size: 2.5em;
-}
-.bienvenida .cta-button {
-    margin-top: 20px;
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
-}
-
-/* Planes de Licencias */
+/* Sección de Planes de Licencias */
 .planes {
     padding: 50px 20px;
     background-color: #fff;
     text-align: center;
 }
+
 .planes h2 {
     margin-bottom: 40px;
+    color: #444;
+    font-size: 2em;
 }
+
+/* Estilos de cada Plan */
 .plan {
     display: inline-block;
     width: 280px;
     margin: 20px;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f8f9fa;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
 }
+
+.plan:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.plan.destacado {
+    border: 2px solid #007bff;
+    background-color: #f0f8ff;
+}
+
+/* Título del Plan */
 .plan h3 {
+    color: #007bff;
     margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+/* Descripción */
+.descripcion {
+    margin-bottom: 15px;
+    color: #666;
+    font-size: 1em;
+}
+
+/* Precio y Opciones */
+.precio {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tipo {
+    font-weight: bold;
+    color: #333;
+}
+
+.costo {
+    font-size: 1.25em;
+    font-weight: bold;
     color: #007bff;
 }
-.plan p {
-    margin-bottom: 15px;
+
+.ahorro {
+    font-size: 0.9em;
+    color: #28a745;
 }
-.plan .opcion {
-    margin: 10px 0;
-}
+
+/* Botón de Selección */
 .plan button {
-    margin-top: 10px;
-    padding: 10px 20px;
+    width: 100%;
+    padding: 12px 0;
     background-color: #007bff;
     color: #fff;
+    font-size: 1em;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-/* Información Adicional */
-.info-adicional {
-    padding: 20px;
-    text-align: center;
-    background-color: #f1f1f1;
-    font-size: 0.9em;
-}
-
-/* Preguntas Frecuentes */
-.faq {
-    padding: 50px 20px;
-    background-color: #fff;
-}
-.faq h2 {
-    margin-bottom: 30px;
-}
-.faq details {
-    margin-bottom: 15px;
-}
-
-/* Footer */
-footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #343a40;
-    color: #fff;
-    font-size: 0.9em;
-}
-footer a {
-    color: #17a2b8;
+.plan button:hover {
+    background-color: #0056b3;
 }
