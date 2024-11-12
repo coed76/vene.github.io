@@ -3,80 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador de Caricaturas 2D con AI</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            text-align: center;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #77d5d9 3px solid;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-        .main-content {
-            margin: 20px 0;
-        }
-        .main-content input, .main-content button {
-            padding: 10px;
-            margin: 10px;
-            font-size: 1em;
-        }
-        .output {
-            margin: 20px 0;
-            padding: 20px;
-            border: 1px solid #ddd;
-            background: #fff;
-        }
-    </style>
+    <title>Venta de Licencias IBOPLAYER</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Header -->
     <header>
-        <div class="container">
-            <h1>Generador de Caricaturas 2D con AI</h1>
-        </div>
+        <div class="logo">IBOPLAYER</div>
+        <nav>
+            <a href="#planes">Planes</a>
+            <a href="#faq">Preguntas Frecuentes</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <a href="#planes" class="cta-button">Comprar Ahora</a>
     </header>
-    <div class="container">
-        <div class="main-content">
-            <input type="text" id="description" placeholder="Describe tu caricatura">
-            <button onclick="generateCartoon()">Generar Caricatura</button>
+
+    <!-- Bienvenida -->
+    <section class="bienvenida">
+        <h1>Activa IBOPLAYER en tu dispositivo favorito</h1>
+        <p>Disfruta de IBOPLAYER en tu Smart TV, Roku, iPhone, Android o PC con opciones de licencia para 1, 2 o 3 equipos.</p>
+        <a href="#planes" class="cta-button">Ver Planes de Licencias</a>
+    </section>
+
+    <!-- Planes de Licencias -->
+    <section id="planes" class="planes">
+        <h2>Planes de Licencias</h2>
+
+        <!-- Plan: Para 1 Equipo -->
+        <div class="plan">
+            <h3>Para 1 Equipo</h3>
+            <p>Licencia para un solo dispositivo</p>
+            <div class="opcion">
+                <p><strong>1 año</strong> - $10 USD</p>
+            </div>
+            <div class="opcion">
+                <p><strong>Permanente</strong> - $15 USD</p>
+            </div>
+            <button>Seleccionar</button>
         </div>
-        <div class="output" id="output"></div>
-    </div>
-    <script>
-        async function generateCartoon() {
-            const description = document.getElementById('description').value;
-            const output = document.getElementById('output');
-            output.innerHTML = `<p>Generando caricatura para: <strong>${description}</strong></p>`;
-            
-            try {
-                const response = await fetch('https://api.example.com/generate-cartoon', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ description })
-                });
-                const data = await response.json();
-                output.innerHTML = `<img src="${data.imageUrl}" alt="Caricatura generada">`;
-            } catch (error) {
-                output.innerHTML = `<p>Error al generar la caricatura: ${error.message}</p>`;
-            }
-        }
-    </script>
+
+        <!-- Plan: Para 2 Equipos -->
+        <div class="plan">
+            <h3>Para 2 Equipos</h3>
+            <p>Licencia para dos dispositivos</p>
+            <div class="opcion">
+                <p><strong>1 año</strong> - $18 USD (Ahorro: $2)</p>
+            </div>
+            <div class="opcion">
+                <p><strong>Permanente</strong> - $28 USD (Ahorro: $2)</p>
+            </div>
+            <button>Seleccionar</button>
+        </div>
+
+        <!-- Plan: Para 3 Equipos -->
+        <div class="plan">
+            <h3>Para 3 Equipos</h3>
+            <p>Licencia para tres dispositivos</p>
+            <div class="opcion">
+                <p><strong>1 año</strong> - $24 USD (Ahorro: $3)</p>
+            </div>
+            <div class="opcion">
+                <p><strong>Permanente</strong> - $39 USD (Ahorro: $3)</p>
+            </div>
+            <button>Seleccionar</button>
+        </div>
+
+    </section>
+
+    <!-- Información Adicional -->
+    <section class="info-adicional">
+        <p>Nota: El precio de la licencia no incluye lista o servicio de contenidos. Esta licencia es únicamente para la activación de IBOPLAYER en tus dispositivos compatibles.</p>
+    </section>
+
+    <!-- Preguntas Frecuentes -->
+    <section id="faq" class="faq">
+        <h2>Preguntas Frecuentes</h2>
+        <details>
+            <summary>¿Qué es IBOPLAYER?</summary>
+            <p>IBOPLAYER es una aplicación para streaming en múltiples dispositivos.</p>
+        </details>
+        <details>
+            <summary>¿Qué dispositivos son compatibles?</summary>
+            <p>Smart TV, Roku, iPhone, Android y PC.</p>
+        </details>
+        <details>
+            <summary>¿Cómo puedo activar la licencia?</summary>
+            <p>Tras la compra, recibirás instrucciones detalladas para la activación.</p>
+        </details>
+    </section>
+
+    <!-- Contacto -->
+    <footer id="contacto">
+        <p>Contáctanos: <a href="mailto:soporte@iboplayer.com">soporte@iboplayer.com</a> | <a href="https://wa.me/+1234567890">WhatsApp</a></p>
+        <p>&copy; 2024 IBOPLAYER. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
