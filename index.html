@@ -40,11 +40,13 @@
                     <p class="tipo">1 año</p>
                     <p class="costo">$10 USD</p>
                 </div>
+                <button onclick="addToCart('Licencia 1 Año - 1 Equipo', 10)">Agregar al Carrito</button>
+
                 <div class="precio">
                     <p class="tipo">Permanente</p>
                     <p class="costo">$15 USD</p>
                 </div>
-                <button onclick="payWithPaypal('10')">Pagar con PayPal</button>
+                <button onclick="addToCart('Licencia Permanente - 1 Equipo', 15)">Agregar al Carrito</button>
             </div>
 
             <!-- Plan 2 Equipos -->
@@ -56,12 +58,14 @@
                     <p class="costo">$18 USD</p>
                     <p class="ahorro">(Ahorro: $2)</p>
                 </div>
+                <button onclick="addToCart('Licencia 1 Año - 2 Equipos', 18)">Agregar al Carrito</button>
+
                 <div class="precio">
                     <p class="tipo">Permanente</p>
                     <p class="costo">$28 USD</p>
                     <p class="ahorro">(Ahorro: $2)</p>
                 </div>
-                <button onclick="payWithPaypal('18')">Pagar con PayPal</button>
+                <button onclick="addToCart('Licencia Permanente - 2 Equipos', 28)">Agregar al Carrito</button>
             </div>
 
             <!-- Plan 3 Equipos -->
@@ -73,36 +77,24 @@
                     <p class="costo">$24 USD</p>
                     <p class="ahorro">(Ahorro: $3)</p>
                 </div>
+                <button onclick="addToCart('Licencia 1 Año - 3 Equipos', 24)">Agregar al Carrito</button>
+
                 <div class="precio">
                     <p class="tipo">Permanente</p>
                     <p class="costo">$39 USD</p>
                     <p class="ahorro">(Ahorro: $3)</p>
                 </div>
-                <button onclick="payWithPaypal('24')">Pagar con PayPal</button>
+                <button onclick="addToCart('Licencia Permanente - 3 Equipos', 39)">Agregar al Carrito</button>
             </div>
         </div>
     </section>
 
-    <!-- Información Adicional -->
-    <section class="info-adicional">
-        <p>Nota: El precio de la licencia no incluye lista o servicio de contenidos. Esta licencia es solo para la activación de IBOPLAYER.</p>
-    </section>
-
-    <!-- Sección de Preguntas Frecuentes -->
-    <section id="faq" class="faq">
-        <h2>Preguntas Frecuentes</h2>
-        <details>
-            <summary>¿Qué es IBOPLAYER?</summary>
-            <p>IBOPLAYER es una aplicación de streaming compatible con múltiples dispositivos.</p>
-        </details>
-        <details>
-            <summary>¿Qué dispositivos son compatibles?</summary>
-            <p>Smart TV, Roku, iPhone, Android y PC.</p>
-        </details>
-        <details>
-            <summary>¿Cómo activo la licencia?</summary>
-            <p>Recibirás instrucciones detalladas tras la compra.</p>
-        </details>
+    <!-- Carrito de Compras -->
+    <section id="carrito" class="carrito">
+        <h2>Carrito de Compras</h2>
+        <div id="cart-items"></div>
+        <p id="total">Total: $0 USD</p>
+        <button onclick="payWithPaypal()">Pagar con PayPal</button>
     </section>
 
     <!-- Contacto y Botones de Redes -->
@@ -116,10 +108,47 @@
         <p>&copy; 2024 IBOPLAYER. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Scripts para PayPal -->
+    <!-- Scripts para el Carrito y PayPal -->
     <script>
-        function payWithPaypal(amount) {
-            const url = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=TU_CORREO_PAYPAL&item_name=Licencia+IBOPLAYER&amount=${amount}&currency_code=USD`;
+        let cart = [];
+
+        function addToCart(itemName, price) {
+            cart.push({ itemName, price });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById("cart-items");
+            const totalElement = document.getElementById("total");
+            cartItems.innerHTML = "";
+
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                cartItems.innerHTML += `<p>${item.itemName} - $${item.price} USD <button onclick="removeFromCart(${index})">Eliminar</button></p>`;
+            });
+
+            totalElement.textContent = `Total: $${total} USD`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function payWithPaypal() {
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            if (total === 0) {
+                alert("El carrito está vacío.");
+                return;
+            }
+
+            const url = `https://www.paypal.com/cgi-bin/webscr?cmd=_cart&business=TU_CORREO_PAYPAL&upload=1`;
+            cart.forEach((item, index) => {
+                const itemIndex = index + 1;
+                url += `&item_name_${itemIndex}=${encodeURIComponent(item.itemName)}&amount_${itemIndex}=${item.price}`;
+            });
+
             window.open(url, '_blank');
         }
     </script>
