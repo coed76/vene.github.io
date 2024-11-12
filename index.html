@@ -1,53 +1,128 @@
-<section id="planes" class="planes">
-    <h2>Planes de Licencias</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licencias IBOPLAYER</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-    <!-- Plan: Para 1 Equipo -->
-    <div class="plan">
-        <h3>Para 1 Equipo</h3>
-        <p class="descripcion">Licencia para un solo dispositivo</p>
-        <div class="precio">
-            <p class="tipo">Licencia de 1 año</p>
-            <p class="costo">$10 USD</p>
-        </div>
-        <div class="precio">
-            <p class="tipo">Licencia Permanente</p>
-            <p class="costo">$15 USD</p>
-        </div>
-        <button>Seleccionar</button>
-    </div>
+    <!-- Header -->
+    <header>
+        <div class="logo">IBOPLAYER</div>
+        <nav>
+            <a href="#planes">Planes</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <a href="#planes" class="cta-button">Comprar Ahora</a>
+    </header>
 
-    <!-- Plan: Para 2 Equipos -->
-    <div class="plan destacado">
-        <h3>Para 2 Equipos</h3>
-        <p class="descripcion">Licencia para dos dispositivos</p>
-        <div class="precio">
-            <p class="tipo">Licencia de 1 año</p>
-            <p class="costo">$18 USD</p>
-            <p class="ahorro">(Ahorro: $2)</p>
-        </div>
-        <div class="precio">
-            <p class="tipo">Licencia Permanente</p>
-            <p class="costo">$28 USD</p>
-            <p class="ahorro">(Ahorro: $2)</p>
-        </div>
-        <button>Seleccionar</button>
-    </div>
+    <!-- Sección de Bienvenida -->
+    <section class="bienvenida">
+        <h1>Activa IBOPLAYER en tu dispositivo favorito</h1>
+        <p>Compatibilidad con Smart TV, Roku, iPhone, Android y PC.</p>
+        <a href="#planes" class="cta-button">Ver Planes</a>
+    </section>
 
-    <!-- Plan: Para 3 Equipos -->
-    <div class="plan">
-        <h3>Para 3 Equipos</h3>
-        <p class="descripcion">Licencia para tres dispositivos</p>
-        <div class="precio">
-            <p class="tipo">Licencia de 1 año</p>
-            <p class="costo">$24 USD</p>
-            <p class="ahorro">(Ahorro: $3)</p>
-        </div>
-        <div class="precio">
-            <p class="tipo">Licencia Permanente</p>
-            <p class="costo">$39 USD</p>
-            <p class="ahorro">(Ahorro: $3)</p>
-        </div>
-        <button>Seleccionar</button>
-    </div>
+    <!-- Planes de Licencias -->
+    <section id="planes" class="planes">
+        <h2>Planes de Licencias</h2>
 
-</section>
+        <!-- Planes con diferentes opciones -->
+        <div class="planes-container">
+            <!-- Plan 1 Equipo -->
+            <div class="plan">
+                <h3>Para 1 Equipo</h3>
+                <p class="descripcion">Licencia para un solo dispositivo</p>
+                <div class="precio">
+                    <p class="tipo">1 año</p>
+                    <p class="costo">$10 USD</p>
+                </div>
+                <div class="precio">
+                    <p class="tipo">Permanente</p>
+                    <p class="costo">$15 USD</p>
+                </div>
+                <button onclick="payWithPaypal('10')">Pagar con PayPal</button>
+            </div>
+
+            <!-- Plan 2 Equipos -->
+            <div class="plan destacado">
+                <h3>Para 2 Equipos</h3>
+                <p class="descripcion">Licencia para dos dispositivos</p>
+                <div class="precio">
+                    <p class="tipo">1 año</p>
+                    <p class="costo">$18 USD</p>
+                    <p class="ahorro">(Ahorro: $2)</p>
+                </div>
+                <div class="precio">
+                    <p class="tipo">Permanente</p>
+                    <p class="costo">$28 USD</p>
+                    <p class="ahorro">(Ahorro: $2)</p>
+                </div>
+                <button onclick="payWithPaypal('18')">Pagar con PayPal</button>
+            </div>
+
+            <!-- Plan 3 Equipos -->
+            <div class="plan">
+                <h3>Para 3 Equipos</h3>
+                <p class="descripcion">Licencia para tres dispositivos</p>
+                <div class="precio">
+                    <p class="tipo">1 año</p>
+                    <p class="costo">$24 USD</p>
+                    <p class="ahorro">(Ahorro: $3)</p>
+                </div>
+                <div class="precio">
+                    <p class="tipo">Permanente</p>
+                    <p class="costo">$39 USD</p>
+                    <p class="ahorro">(Ahorro: $3)</p>
+                </div>
+                <button onclick="payWithPaypal('24')">Pagar con PayPal</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información Adicional -->
+    <section class="info-adicional">
+        <p>Nota: El precio de la licencia no incluye lista o servicio de contenidos. Esta licencia es solo para la activación de IBOPLAYER.</p>
+    </section>
+
+    <!-- Sección de Preguntas Frecuentes -->
+    <section id="faq" class="faq">
+        <h2>Preguntas Frecuentes</h2>
+        <details>
+            <summary>¿Qué es IBOPLAYER?</summary>
+            <p>IBOPLAYER es una aplicación de streaming compatible con múltiples dispositivos.</p>
+        </details>
+        <details>
+            <summary>¿Qué dispositivos son compatibles?</summary>
+            <p>Smart TV, Roku, iPhone, Android y PC.</p>
+        </details>
+        <details>
+            <summary>¿Cómo activo la licencia?</summary>
+            <p>Recibirás instrucciones detalladas tras la compra.</p>
+        </details>
+    </section>
+
+    <!-- Contacto y Botones de Redes -->
+    <footer id="contacto">
+        <p>Contáctanos:</p>
+        <div class="contact-buttons">
+            <a href="https://wa.me/+1234567890" class="whatsapp" target="_blank">WhatsApp</a>
+            <a href="https://t.me/username" class="telegram" target="_blank">Telegram</a>
+            <a href="mailto:soporte@iboplayer.com" class="email">Email</a>
+        </div>
+        <p>&copy; 2024 IBOPLAYER. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts para PayPal -->
+    <script>
+        function payWithPaypal(amount) {
+            const url = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=TU_CORREO_PAYPAL&item_name=Licencia+IBOPLAYER&amount=${amount}&currency_code=USD`;
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
