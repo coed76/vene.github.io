@@ -1,17 +1,9 @@
 /* General */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
 body {
-    color: #333;
+    font-family: Arial, sans-serif;
     background-color: #f8f9fa;
-}
-a {
-    text-decoration: none;
-    color: inherit;
+    color: #333;
+    margin: 0;
 }
 
 /* Header */
@@ -21,7 +13,7 @@ header {
     align-items: center;
     padding: 20px;
     background-color: #007bff;
-    color: #fff;
+    color: white;
 }
 header .logo {
     font-size: 1.5em;
@@ -29,13 +21,15 @@ header .logo {
 }
 header nav a {
     margin: 0 15px;
-    color: #fff;
+    color: white;
+    text-decoration: none;
 }
 header .cta-button {
     background-color: #28a745;
-    color: #fff;
     padding: 10px 20px;
+    color: white;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 /* Bienvenida */
@@ -46,83 +40,108 @@ header .cta-button {
 }
 .bienvenida h1 {
     font-size: 2.5em;
+    margin-bottom: 10px;
 }
 .bienvenida .cta-button {
     margin-top: 20px;
-    display: inline-block;
     padding: 15px 30px;
     background-color: #007bff;
-    color: #fff;
+    color: white;
     border-radius: 5px;
 }
 
-/* Planes de Licencias */
+/* Planes */
 .planes {
-    padding: 50px 20px;
-    background-color: #fff;
     text-align: center;
+    padding: 50px 20px;
+    background-color: white;
 }
 .planes h2 {
-    margin-bottom: 40px;
+    color: #444;
+    font-size: 2em;
+    margin-bottom: 30px;
 }
+
+.planes-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 .plan {
-    display: inline-block;
     width: 280px;
-    margin: 20px;
+    border: 2px solid #ddd;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #f8f9fa;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
 }
+
+.plan:hover {
+    transform: translateY(-10px);
+}
+
+.plan.destacado {
+    border: 2px solid #007bff;
+    background-color: #f0f8ff;
+}
+
 .plan h3 {
-    margin-bottom: 10px;
     color: #007bff;
 }
-.plan p {
-    margin-bottom: 15px;
-}
-.plan .opcion {
-    margin: 10px 0;
-}
-.plan button {
+
+.precio {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
     margin-top: 10px;
-    padding: 10px 20px;
+}
+
+.tipo {
+    font-weight: bold;
+}
+
+.costo {
+    color: #007bff;
+    font-size: 1.25em;
+}
+
+button {
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 10px;
     background-color: #007bff;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 5px;
+    font-size: 1em;
     cursor: pointer;
 }
 
-/* Información Adicional */
-.info-adicional {
-    padding: 20px;
-    text-align: center;
-    background-color: #f1f1f1;
-    font-size: 0.9em;
+/* Contacto */
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
-/* Preguntas Frecuentes */
-.faq {
-    padding: 50px 20px;
-    background-color: #fff;
-}
-.faq h2 {
-    margin-bottom: 30px;
-}
-.faq details {
-    margin-bottom: 15px;
+.contact-buttons a {
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
-/* Footer */
+.whatsapp { background-color: #25D366; }
+.telegram { background-color: #0088cc; }
+.email { background-color: #333; }
+
 footer {
-    padding: 20px;
     text-align: center;
-    background-color: #343a40;
-    color: #fff;
-    font-size: 0.9em;
-}
-footer a {
-    color: #17a2b8;
+    padding: 20px;
+    background-color: #f8f9fa;
 }
