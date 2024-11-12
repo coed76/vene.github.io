@@ -1,0 +1,128 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    color: #333;
+    background-color: #f8f9fa;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #007bff;
+    color: #fff;
+}
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+header nav a {
+    margin: 0 15px;
+    color: #fff;
+}
+header .cta-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Bienvenida */
+.bienvenida {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #e9ecef;
+}
+.bienvenida h1 {
+    font-size: 2.5em;
+}
+.bienvenida .cta-button {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Planes de Licencias */
+.planes {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+.planes h2 {
+    margin-bottom: 40px;
+}
+.plan {
+    display: inline-block;
+    width: 280px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.plan h3 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+.plan p {
+    margin-bottom: 15px;
+}
+.plan .opcion {
+    margin: 10px 0;
+}
+.plan button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Información Adicional */
+.info-adicional {
+    padding: 20px;
+    text-align: center;
+    background-color: #f1f1f1;
+    font-size: 0.9em;
+}
+
+/* Preguntas Frecuentes */
+.faq {
+    padding: 50px 20px;
+    background-color: #fff;
+}
+.faq h2 {
+    margin-bottom: 30px;
+}
+.faq details {
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #343a40;
+    color: #fff;
+    font-size: 0.9em;
+}
+footer a {
+    color: #17a2b8;
+}
