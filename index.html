@@ -17,7 +17,6 @@
             --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Reset y estilos base */
         * {
             margin: 0;
             padding: 0;
@@ -30,7 +29,6 @@
             color: var(--text-dark);
         }
 
-        /* Encabezado */
         .header-flash {
             position: relative;
             background-color: black;
@@ -38,15 +36,6 @@
             text-align: center;
             padding: 80px 20px;
             overflow: hidden;
-        }
-
-        #particle-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
         }
 
         .header-content {
@@ -91,25 +80,12 @@
             background-color: var(--primary-hover);
         }
 
-        /* Sección de Bienvenida */
         .bienvenida {
             text-align: center;
             padding: 4rem 2rem;
             background-color: var(--background-light);
         }
 
-        .bienvenida h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .bienvenida p {
-            font-size: 1.125rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        /* Planes de Licencias */
         .planes {
             padding: 4rem 2rem;
             background-color: white;
@@ -141,103 +117,10 @@
             transform: translateY(-5px);
         }
 
-        .plan.destacado {
-            background-color: #d1ecf1;
-            position: relative;
-        }
-
-        .plan.destacado::before {
-            content: "Más Popular";
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-        }
-
-        .plan h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .precio {
-            margin: 1.5rem 0;
-        }
-
-        .tipo {
-            font-size: 1.125rem;
-            color: var(--text-muted);
-        }
-
-        .costo {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            font-weight: bold;
-            margin: 0.5rem 0;
-        }
-
-        .ahorro {
-            color: #e53935;
-            font-size: 0.875rem;
-        }
-
-        button {
-            width: 100%;
-            padding: 0.75rem;
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: var(--secondary-hover);
-        }
-
-        /* Carrito */
-        .carrito {
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .carrito h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        #total {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin: 2rem 0;
-            text-align: right;
-        }
-
-        /* Footer */
         footer {
             background-color: var(--background-light);
             padding: 4rem 2rem 2rem;
             text-align: center;
-        }
-
-        .resumen {
-            max-width: 800px;
-            margin: 0 auto 3rem;
         }
 
         .contact-buttons {
@@ -259,15 +142,10 @@
             background-color: var(--secondary-hover);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .planes-container {
                 grid-template-columns: 1fr;
                 padding: 0 1rem;
-            }
-
-            .header-flash {
-                padding: 40px 20px;
             }
 
             nav a {
@@ -289,7 +167,6 @@
 </head>
 <body>
     <header class="header-flash" role="banner">
-        <canvas id="particle-canvas" aria-hidden="true"></canvas>
         <div class="header-content">
             <div class="logo" role="heading" aria-level="1">IBOPLAYER</div>
             <nav role="navigation" aria-label="Navegación principal">
@@ -311,109 +188,56 @@
         <section id="planes" class="planes" role="region" aria-labelledby="planes-title">
             <h2 id="planes-title">Planes de Licencias</h2>
             <div class="planes-container">
-                <!-- Plan 1 Equipo -->
                 <article class="plan" role="article">
                     <h3>Para 1 Equipo</h3>
                     <p class="descripcion">Licencia para un solo dispositivo</p>
-                    <div class="precio" role="group" aria-label="Opciones de precio para 1 equipo">
-                        <p class="tipo">1 año</p>
-                        <p class="costo">$10 USD</p>
-                        <button 
-                            onclick="CartManager.addToCart('Licencia 1 Año - 1 Equipo', 10)"
-                            aria-label="Agregar licencia de 1 año para 1 equipo al carrito">
-                            Agregar al Carrito
-                        </button>
-                        <div class="precio" style="margin-top: 2rem;">
-                            <p class="tipo">Permanente</p>
-                            <p class="costo">$15 USD</p>
-                            <button 
-                                onclick="CartManager.addToCart('Licencia Permanente - 1 Equipo', 15)"
-                                aria-label="Agregar licencia permanente para 1 equipo al carrito">
-                                Agregar al Carrito
-                            </button>
-                        </div>
-                    </div>
+                    <p class="costo">$10 USD / 1 año</p>
+                    <button onclick="CartManager.addToCart('Licencia 1 Año - 1 Equipo', 10)" aria-label="Agregar licencia de 1 año para 1 equipo al carrito">
+                        Agregar al Carrito
+                    </button>
                 </article>
 
-                <!-- Plan 2 Equipos -->
-                <article class="plan destacado" role="article">
+                <article class="plan" role="article">
                     <h3>Para 2 Equipos</h3>
                     <p class="descripcion">Licencia para dos dispositivos</p>
-                    <div class="precio" role="group" aria-label="Opciones de precio para 2 equipos">
-                        <p class="tipo">1 año</p>
-                        <p class="costo">$18 USD</p>
-                        <p class="ahorro">(Ahorro: $2)</p>
-                        <button 
-                            onclick="CartManager.addToCart('Licencia 1 Año - 2 Equipos', 18)"
-                            aria-label="Agregar licencia de 1 año para 2 equipos al carrito">
-                            Agregar al Carrito
-                        </button>
-                        <div class="precio" style="margin-top: 2rem;">
-                            <p class="tipo">Permanente</p>
-                            <p class="costo">$28 USD</p>
-                            <p class="ahorro">(Ahorro: $2)</p>
-                            <button 
-                                onclick="CartManager.addToCart('Licencia Permanente - 2 Equipos', 28)"
-                                aria-label="Agregar licencia permanente para 2 equipos al carrito">
-                                Agregar al Carrito
-                            </button>
-                        </div>
-                    </div>
+                    <p class="costo">$18 USD / 1 año</p>
+                    <button onclick="CartManager.addToCart('Licencia 1 Año - 2 Equipos', 18)" aria-label="Agregar licencia de 1 año para 2 equipos al carrito">
+                        Agregar al Carrito
+                    </button>
                 </article>
 
-                <!-- Plan 3 Equipos -->
                 <article class="plan" role="article">
                     <h3>Para 3 Equipos</h3>
                     <p class="descripcion">Licencia para tres dispositivos</p>
-                    <div class="precio" role="group" aria-label="Opciones de precio para 3 equipos">
-                        <p class="tipo">1 año</p>
-                        <p class="costo">$24 USD</p>
-                        <p class="ahorro">(Ahorro: $6)</p>
-                        <button 
-                            onclick="CartManager.addToCart('Licencia 1 Año - 3 Equipos', 24)"
-                            aria-label="Agregar licencia de 1 año para 3 equipos al carrito">
-                            Agregar al Carrito
-                        </button>
-                        <div class="precio" style="margin-top: 2rem;">
-                            <p class="tipo">Permanente</p>
-                            <p class="costo">$39 USD</p>
-                            <p class="ahorro">(Ahorro: $6)</p>
-                            <button 
-                                onclick="CartManager.addToCart('Licencia Permanente - 3 Equipos', 39)"
-                                aria-label="Agregar licencia permanente para 3 equipos al carrito">
-                                Agregar al Carrito
-                            </button>
-                        </div>
-                    </div>
+                    <p class="costo">$24 USD / 1 año</p>
+                    <button onclick="CartManager.addToCart('Licencia 1 Año - 3 Equipos', 24)" aria-label="Agregar licencia de 1 año para 3 equipos al carrito">
+                        Agregar al Carrito
+                    </button>
                 </article>
             </div>
-        </section>
-
-        <section id="carrito" class="carrito" role="region" aria-labelledby="cart-title">
-            <h2 id="cart-title">Carrito de Compras</h2>
-            <div id="cart-items" role="list" aria-label="Items en el carrito"></div>
-            <p id="total" role="status" aria-live="polite">Total: $0 USD</p>
-            <button 
-                onclick="PaymentManager.payWithPaypal()" 
-                aria-label="Proceder al pago con PayPal">
-                Pagar con PayPal
-            </button>
         </section>
     </main>
 
     <footer id="contacto" role="contentinfo">
-        <div class="resumen">
-            <h2>¿Por qué elegir IBOPlayer?</h2>
-            <p>IBOPlayer ofrece una calidad de imagen superior, reproducción sin pausas y compatibilidad con múltiples dispositivos. Disfruta de una experiencia de streaming continua y la flexibilidad de cambiar entre dispositivos con facilidad.</p>
-        </div>
+        <h2>¿Por qué elegir IBOPlayer?</h2>
+        <p>IBOPlayer ofrece una calidad de imagen superior, reproducción sin pausas y compatibilidad con múltiples dispositivos. Disfruta de una experiencia de streaming continua y la flexibilidad de cambiar entre dispositivos con facilidad.</p>
+        
         <div class="contact-buttons" role="group" aria-label="Opciones de contacto">
-            <a href="https://wa.me/+1234567890" class="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a href="https://t.me/username" class="telegram" target="_blank" rel="noopener noreferrer">Telegram</a>
-            <a href="mailto:soporte@iboplayer.com" class="email">Email</a>
+            <a href="https://wa.me/639302957535" class="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp: +639302957535</a>
+            <a href="https://t.me/dev0TH" class="telegram" target="_blank" rel="noopener noreferrer">Telegram: @dev0TH</a>
+            <a href="https://www.paypal.com/paypalme/servpaypa3" class="paypal" target="_blank" rel="noopener noreferrer">PayPal: servpaypa3@gmail.com</a>
         </div>
+        
         <p>&copy; <time datetime="2024">2024</time> IBOPLAYER. Todos los derechos reservados.</p>
     </footer>
 
     <script>
-        // Gestor del Carrito
-        const CartManager
+        // Cart Manager Example
+        const CartManager = {
+            addToCart: (item, price) => {
+                alert(`Agregado al carrito: ${item} por $${price} USD`);
+            }
+        };
+    </script>
+</body>
+</html>
