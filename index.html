@@ -365,20 +365,20 @@
         }
 
         function payWithPaypal() {
-            const total = cart.reduce((sum, item) => sum + item.price, 0);
-            if (total === 0) {
-                alert("El carrito está vacío.");
-                return;
-            }
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    if (total === 0) {
+        alert("El carrito está vacío.");
+        return;
+    }
 
-            const url = `https://www.paypal.com/cgi-bin/webscr?cmd=_cart&business=servpaypa3@gmail.com&upload=1`;
-            cart.forEach((item, index) => {
-                const itemIndex = index + 1;
-                url += `&item_name_${itemIndex}=${encodeURIComponent(item.itemName)}&amount_${itemIndex}=${item.price}`;
-            });
+    const url = `https://www.paypal.com/cgi-bin/webscr?cmd=_cart&business=servpaypa3@gmail.com&upload=1`;
+    cart.forEach((item, index) => {
+        const itemIndex = index + 1;
+        url += `&item_name_${itemIndex}=${encodeURIComponent(item.itemName)}&amount_${itemIndex}=${item.price}`;
+    });
 
-            window.open(url, '_blank');
-        }
+    window.open(url, '_blank');
+}
     </script>
 
     <script>
