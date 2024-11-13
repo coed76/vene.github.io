@@ -278,16 +278,6 @@
             cart.splice(index, 1);
             updateCart();
         }
-
-        function payWithPaypal() {
-            const total = cart.reduce((sum, item) => sum + item.price, 0);
-            if (total === 0) {
-                alert("El carrito está vacío.");
-                return;
-            }
-            // Aquí podrías agregar el código de integración con PayPal
-            alert(`El total de $${total} USD se enviará a PayPal`);
-        }
     </script>
 
 </body>
