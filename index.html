@@ -15,7 +15,7 @@
         /* Encabezado */
         .header-flash {
             position: relative;
-            background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro para mejorar la legibilidad del texto */
+            background-color: rgba(0, 0, 0, 0.5);
             background-image: url('https://i.ibb.co/0F9st1y/Picsart-24-11-13-07-55-07-794.png');
             background-size: cover;
             background-position: center;
@@ -65,6 +65,36 @@
 
         nav a:hover {
             text-decoration: underline;
+        }
+
+        /* Estilos del menú desplegable */
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         /* Sección de Bienvenida */
@@ -233,11 +263,18 @@
     <header class="header-flash">
         <canvas id="particle-canvas"></canvas>
         <div class="header-content">
-            <div class="logo">IBOPLAYER</div>
+            <div class="logo">LICENCIAS IBOPLAYER</div>
             <nav>
-                <a href="#planes">Planes</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contacto">Contacto</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)">Menú</a>
+                    <div class="dropdown-content">
+                        <a href="#planes">Planes</a>
+                        <a href="#carrito">Carrito de Compras</a>
+                        <a href="https://wa.me/+639302957535" target="_blank">WhatsApp</a>
+                        <a href="https://t.me/@dev0TH" target="_blank">Telegram</a>
+                        <a href="mailto:servpaypa3@gmail.com">Correo</a>
+                    </div>
+                </div>
             </nav>
             <a href="#planes" class="cta-button">Comprar Ahora</a>
         </div>
@@ -324,7 +361,7 @@
     <footer id="contacto">
         <div class="resumen">
             <h2>¿Por qué elegir IBOPlayer?</h2>
-            <p>IBOPlayer ofrece una calidad de imagen superior, reproducción sin pausas y compatibilidad con múltiples dispositivos. Disfruta de una experiencia de streaming continua y la flexibilidad de ver tu contenido favorito en cualquier lugar.</p>
+            <p>IBOPlayer ofrece una calidad de imagen superior, reproducción sin pausas y compatibilidad con múltiples dispositivos. Disfruta de una experiencia de streaming continua y la flexibilid[...]
         </div>
         <div class="contact-buttons">
             <!-- WhatsApp -->
@@ -414,7 +451,7 @@
             draw() {
                 ctx.fillStyle = this.color;
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.arc(this.x, this.size, this.size, 0, Math.PI * 2);
                 ctx.fill();
             }
         }
