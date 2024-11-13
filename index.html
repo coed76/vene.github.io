@@ -285,9 +285,14 @@
                 alert("El carrito está vacío.");
                 return;
             }
-            // Aquí podrías agregar el código de integración con PayPal
-            alert(`El total de $${total} USD se enviará a PayPal`);
-        }
+            let url = `https://www.paypal.com/cgi-bin/webscr?cmd=_cart&business=your-paypal-email@example.com&upload=1`;
+    cart.forEach((item, index) => {
+        const itemIndex = index + 1;
+        url += `&item_name_${itemIndex}=${encodeURIComponent(item.itemName)}&amount_${itemIndex}=${item.price}`;
+    });
+
+    window.open(url, '_blank');
+}
     </script>
 
 </body>
