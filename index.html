@@ -78,7 +78,7 @@
         .dropdown {
             display: none;
             position: absolute;
-            background-color: #f9f9f9;
+            background-color: black; /* Fondo negro */
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
@@ -87,14 +87,14 @@
         }
 
         .dropdown-content a {
-            color: black;
+            color: white; /* Letras blancas */
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
 
         .dropdown-content a:hover {
-            background-color: #f1f1f1;
+            background-color: #575757; /* Fondo gris oscuro al pasar el ratón */
         }
 
         .menu-icon:hover + .dropdown, .dropdown:hover {
@@ -276,7 +276,9 @@
                 </div>
                 <div class="dropdown">
                     <div class="dropdown-content">
-                        <a href="#planes">Planes</a>
+                        <a href="#plan1">Plan 1 Equipo</a>
+                        <a href="#plan2">Plan 2 Equipos</a>
+                        <a href="#plan3">Plan 3 Equipos</a>
                         <a href="#carrito">Carrito de Compras</a>
                         <a href="https://wa.me/+639302957535" target="_blank">WhatsApp</a>
                         <a href="https://t.me/@dev0TH" target="_blank">Telegram</a>
@@ -301,7 +303,7 @@
 
         <div class="planes-container">
             <!-- Plan 1 Equipo -->
-            <div class="plan">
+            <div id="plan1" class="plan">
                 <h3>Para 1 Equipo</h3>
                 <p class="descripcion">Licencia para un solo dispositivo</p>
                 <div class="precio">
@@ -318,7 +320,7 @@
             </div>
 
             <!-- Plan 2 Equipos -->
-            <div class="plan destacado">
+            <div id="plan2" class="plan destacado">
                 <h3>Para 2 Equipos</h3>
                 <p class="descripcion">Licencia para dos dispositivos</p>
                 <div class="precio">
@@ -337,7 +339,7 @@
             </div>
 
             <!-- Plan 3 Equipos -->
-            <div class="plan">
+            <div id="plan3" class="plan">
                 <h3>Para 3 Equipos</h3>
                 <p class="descripcion">Licencia para tres dispositivos</p>
                 <div class="precio">
