@@ -39,33 +39,19 @@
         }
 
         .logo {
-            font-size: 72px; /* Doble tamaño */
+            font-size: 72px;
             font-weight: bold;
-            margin-top: -20px; /* Sube dos líneas */
-        }
-
-        .cta-button {
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            display: none; /* Hide the button */
-        }
-
-        .cta-button:hover {
-            background-color: #218838;
+            margin-top: -20px;
         }
 
         nav {
-            position: fixed; /* Make the menu floating */
+            position: fixed;
             top: 20px;
             left: 20px;
-            z-index: 1000; /* Ensure it stays above other elements */
-            background-color: red; /* Set background color to red */
-            border: 2px solid black; /* Add black border */
-            border-radius: 15px; /* Oval corners */
+            z-index: 1000;
+            background-color: red;
+            border: 2px solid black;
+            border-radius: 15px;
             padding: 5px;
         }
 
@@ -84,7 +70,7 @@
         .dropdown {
             display: none;
             position: absolute;
-            background-color: black; /* Fondo negro */
+            background-color: black;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
@@ -93,26 +79,18 @@
         }
 
         .dropdown-content a {
-            color: white; /* Letras blancas */
+            color: white;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
 
         .dropdown-content a:hover {
-            background-color: #575757; /* Fondo gris oscuro al pasar el ratón */
+            background-color: #575757;
         }
 
         .menu-icon:hover + .dropdown, .dropdown:hover {
             display: block;
-        }
-
-        .plan {
-            display: none; /* Hide plans initially */
-        }
-
-        .plan.active {
-            display: block; /* Show plan when activated */
         }
 
         /* Sección de Bienvenida */
@@ -142,7 +120,7 @@
         .planes h2 {
             font-size: 28px;
             color: #333;
-            display: none; /* Hide the heading */
+            display: none;
         }
 
         .planes-container {
@@ -165,66 +143,10 @@
             color: #333;
         }
 
-        .plan .precio {
-            margin: 20px 0;
-        }
-
-        .plan .costo {
-            font-size: 22px;
-            color: #28a745;
-        }
-
-        .plan .tipo {
-            font-size: 18px;
-            color: #666;
-        }
-
-        .plan .ahorro {
-            font-size: 16px;
-            color: #e53935;
-        }
-
-        .plan button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .plan button:hover {
-            background-color: #0056b3;
-        }
-
-        .plan.destacado {
-            background-color: #d1ecf1;
-        }
-
-        /* Carrito de Compras */
         .carrito {
             padding: 20px;
             background-color: #fff;
             text-align: center;
-        }
-
-        #total {
-            font-size: 22px;
-            font-weight: bold;
-            margin: 20px 0;
-        }
-
-        .carrito button {
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .carrito button:hover {
-            background-color: #218838;
         }
 
         /* Resumen en el Footer */
@@ -233,16 +155,6 @@
             padding: 20px;
             background-color: #f8f9fa;
             margin-top: 20px;
-        }
-
-        .resumen h2 {
-            font-size: 24px;
-            color: #333;
-        }
-
-        .resumen p {
-            font-size: 18px;
-            color: #666;
         }
 
         .contact-buttons a {
@@ -258,7 +170,6 @@
             background-color: #0056b3;
         }
 
-        /* Estilos para dispositivos móviles */
         @media (max-width: 768px) {
             .planes-container {
                 flex-direction: column;
@@ -273,7 +184,6 @@
                 width: 100%;
             }
         }
-
     </style>
 </head>
 <body>
@@ -296,12 +206,11 @@
                         <a href="#plan3" onclick="showPlan('plan3')">Plan 3 Equipos</a>
                         <a href="#carrito">Carrito de Compras</a>
                         <a href="https://wa.me/+639302957535" target="_blank">WhatsApp</a>
-                        <a href="https://t.me/dev0TH" target="_blank">Telegram</a>
+                        <a href="https://t.me/@dev0TH" target="_blank">Telegram</a>
                         <a href="mailto:servpaypa3@gmail.com">Correo</a>
                     </div>
                 </div>
             </nav>
-            <a href="#planes" class="cta-button">Comprar Ahora</a>
         </div>
     </header>
 
@@ -309,70 +218,18 @@
     <section class="bienvenida">
         <h1>Activa IBOPLAYER en tu dispositivo favorito</h1>
         <p>Compatibilidad con Smart TV, Roku, iPhone, Android y PC.</p>
-        <a href="#planes" class="cta-button">Ver Planes</a>
     </section>
 
     <!-- Planes de Licencias -->
     <section id="planes" class="planes">
         <h2>Planes de Licencias</h2>
-
         <div class="planes-container">
-            <!-- Plan 1 Equipo -->
-            <div id="plan1" class="plan">
-                <h3>Para 1 Equipo</h3>
-                <p class="descripcion">Licencia para un solo dispositivo</p>
-                <div class="precio">
-                    <p class="tipo">1 año</p>
-                    <p class="costo">$10 USD</p>
-                </div>
-                <button onclick="addToCart('Licencia 1 Año - 1 Equipo', 10)">Agregar al Carrito</button>
-
-                <div class="precio">
-                    <p class="tipo">Permanente</p>
-                    <p class="costo">$15 USD</p>
-                </div>
-                <button onclick="addToCart('Licencia Permanente - 1 Equipo', 15)">Agregar al Carrito</button>
-            </div>
-
-            <!-- Plan 2 Equipos -->
-            <div id="plan2" class="plan destacado">
-                <h3>Para 2 Equipos</h3>
-                <p class="descripcion">Licencia para dos dispositivos</p>
-                <div class="precio">
-                    <p class="tipo">1 año</p>
-                    <p class="costo">$18 USD</p>
-                    <p class="ahorro">(Ahorro: $2)</p>
-                </div>
-                <button onclick="addToCart('Licencia 1 Año - 2 Equipos', 18)">Agregar al Carrito</button>
-
-                <div class="precio">
-                    <p class="tipo">Permanente</p>
-                    <p class="costo">$28 USD</p>
-                    <p class="ahorro">(Ahorro: $2)</p>
-                </div>
-                <button onclick="addToCart('Licencia Permanente - 2 Equipos', 28)">Agregar al Carrito</button>
-            </div>
-
-            <!-- Plan 3 Equipos -->
-            <div id="plan3" class="plan">
-                <h3>Para 3 Equipos</h3>
-                <p class="descripcion">Licencia para tres dispositivos</p>
-                <div class="precio">
-                    <p class="tipo">1 año</p>
-                    <p class="costo">$24 USD</p>
-                    <p class="ahorro">(Ahorro: $6)</p>
-                </div>
-                <button onclick="addToCart('Licencia 1 Año - 3 Equipos', 24)">Agregar al Carrito</button>
-
-                <div class="precio">
-                    <p class="tipo">Permanente</p>
-                    <p class="costo">$39 USD</p>
-                    <p class="ahorro">(Ahorro: $6)</p>
-                </div>
-                <button onclick="addToCart('Licencia Permanente - 3 Equipos', 39)">Agregar al Carrito</button>
-            </div>
+            <!-- Planes de ejemplo -->
         </div>
     </section>
+
+    <!-- Imagen antes del Carrito de Compras -->
+    <img src="https://i.ibb.co/DMq1Rty/Picsart-24-11-13-11-14-54-899.png" alt="Imagen Promocional" style="width:100%; max-width:600px; display:block; margin:auto;">
 
     <!-- Carrito de Compras -->
     <section id="carrito" class="carrito">
@@ -389,19 +246,14 @@
             <p>IBOPlayer ofrece una calidad de imagen superior, reproducción sin pausas y compatibilidad con múltiples dispositivos. Disfruta de una experiencia de streaming continua y la flexibilidad de elegir tu contenido favorito. ¡No esperes más y suscríbete hoy mismo!</p>
         </div>
         <div class="contact-buttons">
-            <!-- WhatsApp -->
             <a href="https://wa.me/+639302957535" class="whatsapp" target="_blank">WhatsApp</a>
-            
-            <!-- Telegram -->
             <a href="https://t.me/@dev0TH" class="telegram" target="_blank">Telegram</a>
-
-            <!-- Email -->
             <a href="mailto:servpaypa3@gmail.com" class="email">Email</a>
         </div>
-        <p>&copy; 2024 Todos los derechos reservados.</p>
+        <p>&copy; 2024 IBOPLAYER. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Scripts para el Carrito, PayPal y Flash de Partículas -->
+    <!-- Scripts para el Carrito y PayPal -->
     <script>
         let cart = [];
 
@@ -414,14 +266,12 @@
             const cartItems = document.getElementById("cart-items");
             const totalElement = document.getElementById("total");
             cartItems.innerHTML = "";
-
             let total = 0;
             cart.forEach((item, index) => {
                 total += item.price;
-                cartItems.innerHTML += <p>${item.itemName} - $${item.price} USD <button onclick="removeFromCart(${index})">Eliminar</button></p>;
+                cartItems.innerHTML += `<p>${item.itemName} - $${item.price} USD <button onclick="removeFromCart(${index})">Eliminar</button></p>`;
             });
-
-            totalElement.textContent = Total: $${total} USD;
+            totalElement.textContent = `Total: $${total} USD`;
         }
 
         function removeFromCart(index) {
@@ -435,82 +285,9 @@
                 alert("El carrito está vacío.");
                 return;
             }
-
-            let url = https://www.paypal.com/cgi-bin/webscr?cmd=_cart&business=servpaypa3@gmail.com&upload=1;
-            cart.forEach((item, index) => {
-                const itemIndex = index + 1;
-                url += &item_name_${itemIndex}=${encodeURIComponent(item.itemName)}&amount_${itemIndex}=${item.price};
-            });
-
-            window.open(url, '_blank');
+            // Aquí podrías agregar el código de integración con PayPal
+            alert(`El total de $${total} USD se enviará a PayPal`);
         }
-
-        function showPlan(planId) {
-            const plans = document.querySelectorAll('.plan');
-            plans.forEach(plan => plan.classList.remove('active'));
-            document.getElementById(planId).classList.add('active');
-        }
-    </script>
-
-    <script>
-        // Particles.js script
-        const canvas = document.getElementById("particle-canvas");
-        const ctx = canvas.getContext("2d");
-
-        canvas.width = window.innerWidth;
-        canvas.height = 200;
-
-        let particlesArray = [];
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 5 + 1;
-                this.speedX = Math.random() * 3 - 1.5;
-                this.speedY = Math.random() * 3 - 1.5;
-                this.color = hsl(${Math.random() * 360}, 100%, 50%);
-            }
-
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                if (this.size > 0.2) this.size -= 0.1;
-            }
-
-            draw() {
-                ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.size, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        function handleParticles() {
-            particlesArray.push(new Particle());
-            particlesArray.forEach((particle, index) => {
-                particle.update();
-                particle.draw();
-
-                if (particle.size <= 0.3) {
-                    particlesArray.splice(index, 1);
-                }
-            });
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            handleParticles();
-            requestAnimationFrame(animate);
-        }
-
-        window.addEventListener("resize", function() {
-            canvas.width = window.innerWidth;
-            canvas.height = 200;
-        });
-
-        animate();
     </script>
 
 </body>
