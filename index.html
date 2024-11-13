@@ -120,7 +120,6 @@
         .planes h2 {
             font-size: 28px;
             color: #333;
-            display: none;
         }
 
         .planes-container {
@@ -224,7 +223,21 @@
     <section id="planes" class="planes">
         <h2>Planes de Licencias</h2>
         <div class="planes-container">
-            <!-- Planes de ejemplo -->
+            <div class="plan" id="plan1">
+                <h3>Plan 1 Equipo</h3>
+                <p>Precio: $10 USD</p>
+                <button onclick="addToCart('Plan 1 Equipo', 10)">Añadir al Carrito</button>
+            </div>
+            <div class="plan" id="plan2">
+                <h3>Plan 2 Equipos</h3>
+                <p>Precio: $18 USD</p>
+                <button onclick="addToCart('Plan 2 Equipos', 18)">Añadir al Carrito</button>
+            </div>
+            <div class="plan" id="plan3">
+                <h3>Plan 3 Equipos</h3>
+                <p>Precio: $25 USD</p>
+                <button onclick="addToCart('Plan 3 Equipos', 25)">Añadir al Carrito</button>
+            </div>
         </div>
     </section>
 
@@ -257,21 +270,23 @@
     <script>
         let cart = [];
 
-        function addToCart(itemName, price) {
-            cart.push({ itemName, price });
+        function addToCart(item, price) {
+            cart.push({ item, price });
             updateCart();
         }
 
         function updateCart() {
-            const cartItems = document.getElementById("cart-items");
-            const totalElement = document.getElementById("total");
-            cartItems.innerHTML = "";
+            const cartItems = document.getElementById('cart-items');
+            const totalElem = document.getElementById('total');
+            cartItems.innerHTML = '';
             let total = 0;
-            cart.forEach((item, index) => {
-                total += item.price;
-                cartItems.innerHTML += `<p>${item.itemName} - $${item.price} USD <button onclick="removeFromCart(${index})">Eliminar</button></p>`;
+            cart.forEach((product, index) => {
+                total += product.price;
+                const itemElem = document.createElement('div');
+                itemElem.innerHTML = `${product.item} - $${product.price} USD <button onclick="removeFromCart(${index})">Eliminar</button>`;
+                cartItems.appendChild(itemElem);
             });
-            totalElement.textContent = `Total: $${total} USD`;
+            totalElem.innerHTML = `Total: $${total} USD`;
         }
 
         function removeFromCart(index) {
@@ -280,7 +295,7 @@
         }
 
         function payWithPaypal() {
-            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            let total = cart.reduce((sum, product) => sum + product.price, 0);
             if (total === 0) {
                 alert("El carrito está vacío.");
                 return;
