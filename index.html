@@ -44,6 +44,20 @@
             margin-top: -20px;
         }
 
+        .cta-button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            display: none;
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
+        }
+
         nav {
             position: fixed;
             top: 20px;
@@ -93,21 +107,31 @@
             display: block;
         }
 
+        .plan {
+            display: none;
+        }
+
+        .plan.active {
+            display: block;
+        }
+
         /* Sección de Bienvenida */
         .bienvenida {
             text-align: center;
-            padding: 40px;
+            padding: 20px;
             background-color: #f8f9fa;
         }
 
         .bienvenida h1 {
             font-size: 30px;
             color: #333;
+            margin-bottom: 10px;
         }
 
         .bienvenida p {
             font-size: 18px;
             color: #666;
+            margin-bottom: 10px;
         }
 
         /* Planes de Licencias */
@@ -143,10 +167,66 @@
             color: #333;
         }
 
+        .plan .precio {
+            margin: 10px 0;
+        }
+
+        .plan .costo {
+            font-size: 22px;
+            color: #28a745;
+        }
+
+        .plan .tipo {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .plan .ahorro {
+            font-size: 16px;
+            color: #e53935;
+        }
+
+        .plan button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .plan button:hover {
+            background-color: #0056b3;
+        }
+
+        .plan.destacado {
+            background-color: #d1ecf1;
+        }
+
+        /* Carrito de Compras */
         .carrito {
             padding: 20px;
             background-color: #fff;
             text-align: center;
+        }
+
+        #total {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .carrito button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .carrito button:hover {
+            background-color: #218838;
         }
 
         /* Resumen en el Footer */
@@ -155,6 +235,16 @@
             padding: 20px;
             background-color: #f8f9fa;
             margin-top: 20px;
+        }
+
+        .resumen h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .resumen p {
+            font-size: 18px;
+            color: #666;
         }
 
         .contact-buttons a {
@@ -170,6 +260,7 @@
             background-color: #0056b3;
         }
 
+        /* Estilos para dispositivos móviles */
         @media (max-width: 768px) {
             .planes-container {
                 flex-direction: column;
@@ -184,6 +275,7 @@
                 width: 100%;
             }
         }
+
     </style>
 </head>
 <body>
@@ -218,13 +310,64 @@
     <section class="bienvenida">
         <h1>Activa IBOPLAYER en tu dispositivo favorito</h1>
         <p>Compatibilidad con Smart TV, Roku, iPhone, Android y PC.</p>
+        <a href="#planes" class="cta-button">Ver Planes</a>
     </section>
 
     <!-- Planes de Licencias -->
     <section id="planes" class="planes">
         <h2>Planes de Licencias</h2>
+
         <div class="planes-container">
-            <!-- Planes de ejemplo -->
+            <!-- Plan 1 Equipo -->
+            <div id="plan1" class="plan">
+                <h3>Para 1 Equipo</h3>
+                <p class="descripcion">Licencia para un solo dispositivo</p>
+                <div class="precio">
+                    <p class="tipo">1 año</p>
+                    <p class="costo">$10 USD</p>
+                </div>
+                <button onclick="addToCart('Licencia 1 Año - 1 Equipo', 10)">Agregar al Carrito</button>
+
+                <div class="precio">
+                    <p class="tipo">Permanente</p>
+                    <p class="costo">$15 USD</p>
+                </div>
+                <button onclick="addToCart('Licencia Permanente - 1 Equipo', 15)">Agregar al Carrito</button>
+            </div>
+
+            <!-- Plan 2 Equipos -->
+            <div id="plan2" class="plan">
+                <h3>Para 2 Equipos</h3>
+                <p class="descripcion">Licencia para dos dispositivos</p>
+                <div class="precio">
+                    <p class="tipo">1 año</p>
+                    <p class="costo">$15 USD</p>
+                </div>
+                <button onclick="addToCart('Licencia 1 Año - 2 Equipos', 15)">Agregar al Carrito</button>
+
+                <div class="precio">
+                    <p class="tipo">Permanente</p>
+                    <p class="costo">$20 USD</p>
+                </div>
+                <button onclick="addToCart('Licencia Permanente - 2 Equipos', 20)">Agregar al Carrito</button>
+            </div>
+
+            <!-- Plan 3 Equipos -->
+            <div id="plan3" class="plan">
+                <h3>Para 3 Equipos</h3>
+                <p class="descripcion">Licencia para tres dispositivos</p>
+                <div class="precio">
+                    <p class="tipo">1 año</p>
+                    <p class="costo">$20 USD</p>
+                </div>
+                <button onclick="addToCart('Licencia 1 Año - 3 Equipos', 20)">Agregar al Carrito</button>
+
+                <div class="precio">
+                    <p class="tipo">Permanente</p>
+                    <p class="costo">$25 USD</p>
+                </div>
+                <button onclick="addToCart('Licencia Permanente - 3 Equipos', 25)">Agregar al Carrito</button>
+            </div>
         </div>
     </section>
 
@@ -236,63 +379,46 @@
         <h2>Carrito de Compras</h2>
         <div id="cart-items"></div>
         <p id="total">Total: $0 USD</p>
-        <button onclick="payWithPaypal()">Pagar con PayPal</button>
+        <button onclick="checkout()">Pagar</button>
     </section>
 
-    <!-- Resumen en el Footer -->
-    <footer id="contacto">
-        <div class="resumen">
-            <h2>¿Por qué elegir IBOPlayer?</h2>
-            <p>IBOPlayer ofrece una calidad de imagen superior, reproducción sin pausas y compatibilidad con múltiples dispositivos. Disfruta de una experiencia de streaming continua y la flexibilidad de elegir tu contenido favorito. ¡No esperes más y suscríbete hoy mismo!</p>
-        </div>
+    <!-- Resumen de Footer -->
+    <section class="resumen">
+        <h2>Compatible con múltiples dispositivos</h2>
+        <p>Disfruta de IBOPLAYER en una amplia variedad de dispositivos.</p>
         <div class="contact-buttons">
-            <a href="https://wa.me/+639302957535" class="whatsapp" target="_blank">WhatsApp</a>
-            <a href="https://t.me/@dev0TH" class="telegram" target="_blank">Telegram</a>
-            <a href="mailto:servpaypa3@gmail.com" class="email">Email</a>
+            <a href="https://wa.me/+639302957535" target="_blank">WhatsApp</a>
+            <a href="https://t.me/dev0TH" target="_blank">Telegram</a>
+            <a href="mailto:servpaypa3@gmail.com">Correo</a>
         </div>
-        <p>&copy; 2024 IBOPLAYER. Todos los derechos reservados.</p>
-    </footer>
+    </section>
 
-    <!-- Scripts para el Carrito y PayPal -->
     <script>
-        let cart = [];
+        function showPlan(planId) {
+            document.querySelectorAll('.plan').forEach(plan => plan.classList.remove('active'));
+            document.getElementById(planId).classList.add('active');
+        }
 
-        function addToCart(itemName, price) {
-            cart.push({ itemName, price });
+        let cart = [];
+        function addToCart(item, price) {
+            cart.push({ item, price });
             updateCart();
         }
 
         function updateCart() {
-            const cartItems = document.getElementById("cart-items");
-            const totalElement = document.getElementById("total");
-            cartItems.innerHTML = "";
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
             let total = 0;
-            cart.forEach((item, index) => {
-                total += item.price;
-                cartItems.innerHTML += `<p>${item.itemName} - $${item.price} USD <button onclick="removeFromCart(${index})">Eliminar</button></p>`;
+            cart.forEach((entry, index) => {
+                total += entry.price;
+                cartItems.innerHTML += `<p>${entry.item} - $${entry.price} USD</p>`;
             });
-            totalElement.textContent = `Total: $${total} USD`;
+            document.getElementById('total').innerText = `Total: $${total} USD`;
         }
 
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCart();
+        function checkout() {
+            alert('Procediendo al pago...');
         }
-
-        function payWithPaypal() {
-            const total = cart.reduce((sum, item) => sum + item.price, 0);
-            if (total === 0) {
-                alert("El carrito está vacío.");
-                return;
-            }
-            let url = `https://www.paypal.com/cgi-bin/webscr?cmd=_cart&business=your-paypal-email@example.com&upload=1`;
-    cart.forEach((item, index) => {
-        const itemIndex = index + 1;
-        url += `&item_name_${itemIndex}=${encodeURIComponent(item.itemName)}&amount_${itemIndex}=${item.price}`;
-    });
-
-    window.open(url, '_blank');
-       }
     </script>
 
 </body>
