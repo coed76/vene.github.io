@@ -321,7 +321,7 @@
     <footer id="contacto">
         <div class="resumen">
             <h2>¿Por qué elegir IBOPlayer?</h2>
-            <p>IBOPlayer ofrece una calidad de imagen superior, reproducción sin pausas y compatibilidad con múltiples dispositivos. Disfruta de una experiencia de streaming continua y la flexibilidad de cambiar entre dispositivos con facilidad. Activa tu licencia y descubre la diferencia.</p>
+            <p>IBOPlayer ofrece una calidad de imagen superior, reproducción sin pausas y compatibilidad con múltiples dispositivos. Disfruta de una experiencia de streaming continua y la flexibilidad de ver tu contenido favorito en cualquier lugar.</p>
         </div>
         <div class="contact-buttons">
             <!-- WhatsApp -->
@@ -371,7 +371,7 @@
                 return;
             }
 
-            const url = `https://www.paypal.com/cgi-bin/webscr?cmd=_cart&business=TU_CORREO_PAYPAL&upload=1`;
+            const url = `https://www.paypal.com/cgi-bin/webscr?cmd=_cart&business=servpaypa3@gmail.com&upload=1`;
             cart.forEach((item, index) => {
                 const itemIndex = index + 1;
                 url += `&item_name_${itemIndex}=${encodeURIComponent(item.itemName)}&amount_${itemIndex}=${item.price}`;
