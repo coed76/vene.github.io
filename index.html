@@ -58,9 +58,10 @@
         }
 
         nav {
-            position: absolute;
+            position: fixed; /* Make the menu floating */
             top: 20px;
             left: 20px;
+            z-index: 1000; /* Ensure it stays above other elements */
         }
 
         .menu-icon {
@@ -99,6 +100,14 @@
 
         .menu-icon:hover + .dropdown, .dropdown:hover {
             display: block;
+        }
+
+        .plan {
+            display: none; /* Hide plans initially */
+        }
+
+        .plan.active {
+            display: block; /* Show plan when activated */
         }
 
         /* Sección de Bienvenida */
@@ -276,9 +285,9 @@
                 </div>
                 <div class="dropdown">
                     <div class="dropdown-content">
-                        <a href="#plan1">Plan 1 Equipo</a>
-                        <a href="#plan2">Plan 2 Equipos</a>
-                        <a href="#plan3">Plan 3 Equipos</a>
+                        <a href="#plan1" onclick="showPlan('plan1')">Plan 1 Equipo</a>
+                        <a href="#plan2" onclick="showPlan('plan2')">Plan 2 Equipos</a>
+                        <a href="#plan3" onclick="showPlan('plan3')">Plan 3 Equipos</a>
                         <a href="#carrito">Carrito de Compras</a>
                         <a href="https://wa.me/+639302957535" target="_blank">WhatsApp</a>
                         <a href="https://t.me/@dev0TH" target="_blank">Telegram</a>
@@ -428,6 +437,12 @@
             });
 
             window.open(url, '_blank');
+        }
+
+        function showPlan(planId) {
+            const plans = document.querySelectorAll('.plan');
+            plans.forEach(plan => plan.classList.remove('active'));
+            document.getElementById(planId).classList.add('active');
         }
     </script>
 
