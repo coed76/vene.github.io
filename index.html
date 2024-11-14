@@ -5,7 +5,190 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Licencias IBOPLAYER</title>
     <style>
-        /* ... (estilos anteriores se mantienen igual) ... */
+        /* Mantenemos todos los estilos originales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-flash {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-image: url('https://i.ibb.co/0F9st1y/Picsart-24-11-13-07-55-07-794.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            font-size: 72px;
+            font-weight: bold;
+            margin-top: -20px;
+        }
+
+        .cta-button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            display: none;
+        }
+
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background-color: red;
+            border: 2px solid black;
+            border-radius: 15px;
+            padding: 5px;
+        }
+
+        .menu-icon {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 40px;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .menu-icon:hover + .dropdown, .dropdown:hover {
+            display: block;
+        }
+
+        .bienvenida {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .bienvenida h1 {
+            font-size: 30px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .bienvenida p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .planes {
+            padding: 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .planes-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .plan {
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 10px;
+        }
+
+        .plan h3 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .plan .precio {
+            margin: 10px 0;
+        }
+
+        .plan .costo {
+            font-size: 22px;
+            color: #28a745;
+        }
+
+        /* Nuevo estilo para el botón de PayPal */
+        .paypal-button {
+            padding: 10px 20px;
+            background-color: #0070ba;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 0;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .paypal-button:hover {
+            background-color: #003087;
+        }
+
+        .resumen {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            margin-top: 20px;
+        }
+
+        .contact-buttons a {
+            padding: 10px 15px;
+            margin: 5px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
 
         /* Estilos para el modal */
         .modal {
@@ -42,27 +225,50 @@
             color: #999;
         }
 
-        /* Estilo para los botones de PayPal */
-        .paypal-button {
-            background-color: #0070ba;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
+        @media (max-width: 768px) {
+            .planes-container {
+                flex-direction: column;
+                align-items: center;
+            }
 
-        .paypal-button:hover {
-            background-color: #003087;
-        }
+            .plan {
+                width: 80%;
+                margin: 10px 0;
+            }
 
-        /* Los demás estilos se mantienen igual */
+            .logo {
+                font-size: 36px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Header y otras secciones se mantienen igual hasta la sección de planes -->
+    <header class="header-flash">
+        <canvas id="particle-canvas"></canvas>
+        <div class="header-content">
+            <div class="logo">LICENCIAS IBOPLAYER</div>
+            <nav>
+                <div class="menu-icon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="dropdown">
+                    <div class="dropdown-content">
+                        <a href="#planes">Ver Planes</a>
+                        <a href="https://wa.me/+639302957535" target="_blank">WhatsApp</a>
+                        <a href="https://t.me/@dev0TH" target="_blank">Telegram</a>
+                        <a href="mailto:servpaypa3@gmail.com">Correo</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="bienvenida">
+        <h1>Activa IBOPLAYER en tu dispositivo favorito</h1>
+        <p>Compatibilidad con Smart TV, Roku, iPhone, Android y PC.</p>
+    </section>
 
     <section id="planes" class="planes">
         <div class="planes-container">
@@ -113,8 +319,10 @@
         </div>
     </section>
 
-    <!-- Modal del Carrito -->
-    <div id="carritoModal" class="modal">
+    <img src="https://i.ibb.co/DMq1Rty/Picsart-24-11-13-11-14-54-899.png" alt="Imagen Promocional" style="width:100%; max-width:600px; display:block; margin:auto;">
+
+    <!-- Modal de PayPal -->
+    <div id="paypalModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="cerrarModal()">&times;</span>
             <h2>Confirmación de Pago</h2>
@@ -132,9 +340,19 @@
         </div>
     </div>
 
+    <section class="resumen">
+        <h2>Compatible con múltiples dispositivos</h2>
+        <p>Disfruta de IBOPLAYER en una amplia variedad de dispositivos.</p>
+        <div class="contact-buttons">
+            <a href="https://wa.me/+639302957535" target="_blank">WhatsApp</a>
+            <a href="https://t.me/dev0TH" target="_blank">Telegram</a>
+            <a href="mailto:servpaypa3@gmail.com">Correo</a>
+        </div>
+    </section>
+
     <script>
         function procesarPago(item, price) {
-            const modal = document.getElementById('carritoModal');
+            const modal = document.getElementById('paypalModal');
             const modalContent = document.getElementById('modal-content');
             const form = document.getElementById('paypal-form');
 
@@ -153,13 +371,13 @@
         }
 
         function cerrarModal() {
-            const modal = document.getElementById('carritoModal');
+            const modal = document.getElementById('paypalModal');
             modal.style.display = "none";
         }
 
         // Cerrar modal al hacer clic fuera de él
         window.onclick = function(event) {
-            const modal = document.getElementById('carritoModal');
+            const modal = document.getElementById('paypalModal');
             if (event.target == modal) {
                 modal.style.display = "none";
             }
