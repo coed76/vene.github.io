@@ -5,63 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Licencias IBOPLAYER</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Estilos del sitio */
+        body, html {
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
         }
 
+        /* Estilos del ticker */
         .ticker-wrap {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 30px;
-            background-color: rgba(255, 255, 0, 0.65);
-            overflow: hidden;
-            z-index: 999;
+            background-color: #333;
+            padding: 10px;
         }
 
         .ticker {
-            display: inline-block;
-            white-space: nowrap;
-            padding-right: 100%;
-            animation: ticker 20s linear infinite;
-        }
-
-        .ticker span {
-            color: red;
+            color: #fff;
+            text-align: center;
             font-weight: bold;
-            display: inline-block;
-            padding: 5px 10px;
         }
 
-        @keyframes ticker {
-            0% {
-                transform: translate3d(0, 0, 0);
-            }
-            100% {
-                transform: translate3d(-100%, 0, 0);
-            }
-        }
-
+        /* Estilos del encabezado */
         .header-flash {
             position: relative;
-            background-color: rgba(0, 0, 0, 0.5);
-            background-image: url('https://i.ibb.co/0F9st1y/Picsart-24-11-13-07-55-07-794.png');
-            background-size: cover;
-            background-position: center;
-            color: white;
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
             text-align: center;
-            padding: 80px 20px;
-        }
-
-        #particle-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
         }
 
         .header-content {
@@ -70,209 +40,129 @@
         }
 
         .logo {
-            font-size: 72px;
+            font-size: 24px;
             font-weight: bold;
-            margin-top: -20px;
         }
 
-        .cta-button {
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            display: none;
-        }
-
-        nav {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            background-color: red;
-            border: 2px solid black;
-            border-radius: 15px;
-            padding: 5px;
-        }
-
-        .menu-icon {
-            display: inline-block;
+        nav .menu-icon {
             cursor: pointer;
+            display: inline-block;
         }
 
-        .menu-icon div {
+        nav .menu-icon div {
             width: 25px;
             height: 3px;
-            background-color: white;
-            margin: 5px 0;
+            background-color: #fff;
+            margin: 4px 0;
         }
 
-        .dropdown {
-            display: none;
-            position: absolute;
-            background-color: black;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            top: 40px;
-            left: 0;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #575757;
-        }
-
-        .menu-icon:hover + .dropdown, .dropdown:hover {
-            display: block;
-        }
-
+        /* Estilos de bienvenida */
         .bienvenida {
-            text-align: center;
             padding: 20px;
-            background-color: #f8f9fa;
+            text-align: center;
         }
 
         .bienvenida h1 {
-            font-size: 30px;
-            color: #333;
-            margin-bottom: 10px;
+            font-size: 36px;
         }
 
-        .bienvenida p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
+        /* Estilos de los planes */
         .planes {
-            padding: 20px;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .planes-container {
             display: flex;
-            justify-content: space-around;
-            margin-top: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
         }
 
         .plan {
-            background-color: #f1f1f1;
+            background-color: #fff;
             border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             padding: 20px;
-            width: 250px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
             text-align: center;
-            margin: 10px;
         }
 
         .plan h3 {
-            font-size: 24px;
-            color: #333;
+            margin-top: 0;
         }
 
-        .plan .precio {
-            margin: 10px 0;
-        }
-
-        .plan .costo {
-            font-size: 22px;
-            color: #28a745;
-        }
-
-        .paypal-button, .wompi_button_widget {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 5px 0;
-            font-size: 16px;
-            text-decoration: none;
+        .precio {
+            margin: 20px 0;
         }
 
         .paypal-button {
+            display: inline-block;
             background-color: #0070ba;
-            color: white;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
         }
 
         .wompi_button_widget {
-            background-color: #0f5ab1;
-            color: white;
-        }
-
-        .resumen {
-            text-align: center;
-            padding: 20px;
-            background-color: #f8f9fa;
-            margin-top: 20px;
-        }
-
-        .contact-buttons a {
-            padding: 10px 15px;
-            margin: 5px;
-            background-color: #007bff;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
+            background-color: #ffcc00;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
             display: inline-block;
+            margin-top: 10px;
         }
 
+        /* Modal de PayPal */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 1;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
         }
 
         .modal-content {
-            background-color: white;
-            margin: 15% auto;
+            background-color: #fefefe;
+            margin: 5% auto;
             padding: 20px;
-            border-radius: 10px;
+            border: 1px solid #888;
             width: 80%;
             max-width: 500px;
-            position: relative;
         }
 
         .close {
-            position: absolute;
-            right: 15px;
-            top: 10px;
+            color: #aaa;
+            float: right;
             font-size: 28px;
             font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
             cursor: pointer;
         }
 
-        .close:hover {
-            color: #999;
+        /* Estilos del resumen */
+        .resumen {
+            padding: 20px;
+            text-align: center;
         }
 
-        @media (max-width: 768px) {
-            .planes-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .plan {
-                width: 80%;
-                margin: 10px 0;
-            }
-
-            .logo {
-                font-size: 36px;
-            }
+        .contact-buttons a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #333;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin: 5px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -293,14 +183,6 @@
                     <div></div>
                     <div></div>
                 </div>
-                <div class="dropdown">
-                    <div class="dropdown-content">
-                        <a href="#planes">Ver Planes</a>
-                        <a href="https://wa.me/+639302957535" target="_blank">WhatsApp</a>
-                        <a href="https://t.me/@dev0TH" target="_blank">Telegram</a>
-                        <a href="mailto:servpaypa3@gmail.com">Correo</a>
-                    </div>
-                </div>
             </nav>
         </div>
     </header>
@@ -318,13 +200,13 @@
                 <div class="precio">
                     <p class="tipo">1 año</p>
                     <p class="costo">$10 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia 1 Año - 1 Equipo', 10)">Pagar con PayPal</button>
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=servpaypa3@gmail.com&item_name=Licencia%201%20A%C3%B1o%20-%201%20Equipo&amount=10.00&currency_code=USD" target="_blank" class="paypal-button">Pagar con PayPal</a>
                     <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
                 </div>
                 <div class="precio">
                     <p class="tipo">Permanente</p>
                     <p class="costo">$15 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia Permanente - 1 Equipo', 15)">Pagar con PayPal</button>
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=servpaypa3@gmail.com&item_name=Licencia%20Permanente%20-%201%20Equipo&amount=15.00&currency_code=USD" target="_blank" class="paypal-button">Pagar con PayPal</a>
                     <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
                 </div>
             </div>
@@ -335,13 +217,13 @@
                 <div class="precio">
                     <p class="tipo">1 año</p>
                     <p class="costo">$19 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia 1 Año - 2 Equipos', 19)">Pagar con PayPal</button>
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=servpaypa3@gmail.com&item_name=Licencia%201%20A%C3%B1o%20-%202%20Equipos&amount=19.00&currency_code=USD" target="_blank" class="paypal-button">Pagar con PayPal</a>
                     <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
                 </div>
                 <div class="precio">
                     <p class="tipo">Permanente</p>
                     <p class="costo">$29 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia Permanente - 2 Equipos', 29)">Pagar con PayPal</button>
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=servpaypa3@gmail.com&item_name=Licencia%20Permanente%20-%202%20Equipos&amount=29.00&currency_code=USD" target="_blank" class="paypal-button">Pagar con PayPal</a>
                     <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
                 </div>
             </div>
@@ -352,13 +234,13 @@
                 <div class="precio">
                     <p class="tipo">1 año</p>
                     <p class="costo">$26 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia 1 Año - 3 Equipos', 26)">Pagar con PayPal</button>
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=servpaypa3@gmail.com&item_name=Licencia%201%20A%C3%B1o%20-%203%20Equipos&amount=26.00&currency_code=USD" target="_blank" class="paypal-button">Pagar con PayPal</a>
                     <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
                 </div>
                 <div class="precio">
                     <p class="tipo">Permanente</p>
                     <p class="costo">$38 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia Permanente - 3 Equipos', 38)">Pagar con PayPal</button>
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=servpaypa3@gmail.com&item_name=Licencia%20Permanente%20-%203%20Equipos&amount=38.00&currency_code=USD" target="_blank" class="paypal-button">Pagar con PayPal</a>
                     <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
                 </div>
             </div>
@@ -373,32 +255,6 @@
             <a href="https://t.me/@dev0TH" target="_blank">Telegram</a>
         </div>
     </section>
-
-    <!-- Modal para PayPal -->
-    <div id="paypalModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="cerrarModal()">&times;</span>
-            <h2>Procesando pago...</h2>
-            <p>Tu pago se está procesando a través de PayPal. Por favor, espera un momento...</p>
-        </div>
-    </div>
-
-    <!-- Script de PayPal -->
-    <script>
-        function procesarPago(item, precio) {
-            var modal = document.getElementById("paypalModal");
-            modal.style.display = "block";
-
-            setTimeout(function() {
-                alert('Pago realizado para ' + item + ' por $' + precio + ' USD');
-                modal.style.display = "none";
-            }, 2000);
-        }
-
-        function cerrarModal() {
-            document.getElementById("paypalModal").style.display = "none";
-        }
-    </script>
 
     <!-- Script de Wompi -->
     <script src="https://pagos.wompi.sv/js/wompi.pagos.js"></script>
