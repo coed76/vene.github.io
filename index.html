@@ -5,11 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Licencias IBOPLAYER</title>
     <style>
-        /* Mantenemos todos los estilos originales */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+        }
+
+        .ticker-wrap {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 30px;
+            background-color: rgba(255, 255, 0, 0.65);
+            overflow: hidden;
+            z-index: 999;
+        }
+
+        .ticker {
+            display: inline-block;
+            white-space: nowrap;
+            padding-right: 100%;
+            animation: ticker 20s linear infinite;
+        }
+
+        .ticker span {
+            color: red;
+            font-weight: bold;
+            display: inline-block;
+            padding: 5px 10px;
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                transform: translate3d(-100%, 0, 0);
+            }
         }
 
         .header-flash {
@@ -156,7 +188,6 @@
             color: #28a745;
         }
 
-        /* Nuevo estilo para el botón de PayPal */
         .paypal-button {
             padding: 10px 20px;
             background-color: #0070ba;
@@ -190,7 +221,6 @@
             display: inline-block;
         }
 
-        /* Estilos para el modal */
         .modal {
             display: none;
             position: fixed;
@@ -243,6 +273,15 @@
     </style>
 </head>
 <body>
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span>LA COMPRA DE LICENCIA NO INCLUYE NINGÚN TIPO DE CONTENIDO</span>
+            <span>LA COMPRA DE LICENCIA NO INCLUYE NINGÚN TIPO DE CONTENIDO</span>
+            <span>LA COMPRA DE LICENCIA NO INCLUYE NINGÚN TIPO DE CONTENIDO</span>
+            <span>LA COMPRA DE LICENCIA NO INCLUYE NINGÚN TIPO DE CONTENIDO</span>
+        </div>
+    </div>
+
     <header class="header-flash">
         <canvas id="particle-canvas"></canvas>
         <div class="header-content">
@@ -321,13 +360,11 @@
 
     <img src="https://i.ibb.co/DMq1Rty/Picsart-24-11-13-11-14-54-899.png" alt="Imagen Promocional" style="width:100%; max-width:600px; display:block; margin:auto;">
 
-    <!-- Modal de PayPal -->
     <div id="paypalModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="cerrarModal()">&times;</span>
             <h2>Confirmación de Pago</h2>
             <div id="modal-content">
-                <!-- Aquí se mostrará el detalle del producto -->
             </div>
             <form id="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                 <input type="hidden" name="cmd" value="_xclick">
@@ -356,17 +393,14 @@
             const modalContent = document.getElementById('modal-content');
             const form = document.getElementById('paypal-form');
 
-            // Actualizar contenido del modal
             modalContent.innerHTML = `
                 <p><strong>Producto:</strong> ${item}</p>
                 <p><strong>Precio:</strong> $${price} USD</p>
             `;
 
-            // Actualizar formulario de PayPal
             form.querySelector('[name="item_name"]').value = item;
             form.querySelector('[name="amount"]').value = price;
 
-            // Mostrar modal
             modal.style.display = "block";
         }
 
@@ -375,7 +409,6 @@
             modal.style.display = "none";
         }
 
-        // Cerrar modal al hacer clic fuera de él
         window.onclick = function(event) {
             const modal = document.getElementById('paypalModal');
             if (event.target == modal) {
