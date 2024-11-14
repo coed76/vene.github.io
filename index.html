@@ -188,20 +188,24 @@
             color: #28a745;
         }
 
-        .paypal-button {
+        .paypal-button, .wompi_button_widget {
             padding: 10px 20px;
-            background-color: #0070ba;
-            color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             margin: 5px 0;
             font-size: 16px;
-            transition: background-color 0.3s;
+            text-decoration: none;
         }
 
-        .paypal-button:hover {
-            background-color: #003087;
+        .paypal-button {
+            background-color: #0070ba;
+            color: white;
+        }
+
+        .wompi_button_widget {
+            background-color: #0f5ab1;
+            color: white;
         }
 
         .resumen {
@@ -276,9 +280,6 @@
     <div class="ticker-wrap">
         <div class="ticker">
             <span>LA COMPRA DE LICENCIA NO INCLUYE NINGÚN TIPO DE CONTENIDO</span>
-            <span>LA COMPRA DE LICENCIA NO INCLUYE NINGÚN TIPO DE CONTENIDO</span>
-            <span>LA COMPRA DE LICENCIA NO INCLUYE NINGÚN TIPO DE CONTENIDO</span>
-            <span>LA COMPRA DE LICENCIA NO INCLUYE NINGÚN TIPO DE CONTENIDO</span>
         </div>
     </div>
 
@@ -318,11 +319,13 @@
                     <p class="tipo">1 año</p>
                     <p class="costo">$10 USD</p>
                     <button class="paypal-button" onclick="procesarPago('Licencia 1 Año - 1 Equipo', 10)">Pagar con PayPal</button>
+                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
                 </div>
                 <div class="precio">
                     <p class="tipo">Permanente</p>
                     <p class="costo">$15 USD</p>
                     <button class="paypal-button" onclick="procesarPago('Licencia Permanente - 1 Equipo', 15)">Pagar con PayPal</button>
+                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
                 </div>
             </div>
 
@@ -332,12 +335,14 @@
                 <div class="precio">
                     <p class="tipo">1 año</p>
                     <p class="costo">$19 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia 1 Año - 2 Equipos', 15)">Pagar con PayPal</button>
+                    <button class="paypal-button" onclick="procesarPago('Licencia 1 Año - 2 Equipos', 19)">Pagar con PayPal</button>
+                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
                 </div>
                 <div class="precio">
                     <p class="tipo">Permanente</p>
                     <p class="costo">$29 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia Permanente - 2 Equipos', 20)">Pagar con PayPal</button>
+                    <button class="paypal-button" onclick="procesarPago('Licencia Permanente - 2 Equipos', 29)">Pagar con PayPal</button>
+                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
                 </div>
             </div>
 
@@ -347,74 +352,55 @@
                 <div class="precio">
                     <p class="tipo">1 año</p>
                     <p class="costo">$26 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia 1 Año - 3 Equipos', 20)">Pagar con PayPal</button>
+                    <button class="paypal-button" onclick="procesarPago('Licencia 1 Año - 3 Equipos', 26)">Pagar con PayPal</button>
+                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
                 </div>
                 <div class="precio">
                     <p class="tipo">Permanente</p>
                     <p class="costo">$38 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia Permanente - 3 Equipos', 25)">Pagar con PayPal</button>
+                    <button class="paypal-button" onclick="procesarPago('Licencia Permanente - 3 Equipos', 38)">Pagar con PayPal</button>
+                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <img src="https://i.ibb.co/DMq1Rty/Picsart-24-11-13-11-14-54-899.png" alt="Imagen Promocional" style="width:100%; max-width:600px; display:block; margin:auto;">
-
-    <div id="paypalModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="cerrarModal()">&times;</span>
-            <h2>Confirmación de Pago</h2>
-            <div id="modal-content">
-            </div>
-            <form id="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="servpaypa3@gmail.com">
-                <input type="hidden" name="item_name" value="">
-                <input type="hidden" name="amount" value="0">
-                <input type="hidden" name="currency_code" value="USD">
-                <button type="submit" class="paypal-button">Confirmar Pago con PayPal</button>
-            </form>
-        </div>
-    </div>
-
     <section class="resumen">
-        <h2>Compatible con múltiples dispositivos</h2>
-        <p>Disfruta de IBOPLAYER en una amplia variedad de dispositivos.</p>
+        <h3>Resumen</h3>
+        <p>Recuerda que puedes activar tu dispositivo de manera rápida y fácil. Cualquier consulta, contáctanos.</p>
         <div class="contact-buttons">
             <a href="https://wa.me/+639302957535" target="_blank">WhatsApp</a>
-            <a href="https://t.me/dev0TH" target="_blank">Telegram</a>
-            <a href="mailto:servpaypa3@gmail.com">Correo</a>
+            <a href="https://t.me/@dev0TH" target="_blank">Telegram</a>
         </div>
     </section>
 
+    <!-- Modal para PayPal -->
+    <div id="paypalModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h2>Procesando pago...</h2>
+            <p>Tu pago se está procesando a través de PayPal. Por favor, espera un momento...</p>
+        </div>
+    </div>
+
+    <!-- Script de PayPal -->
     <script>
-        function procesarPago(item, price) {
-            const modal = document.getElementById('paypalModal');
-            const modalContent = document.getElementById('modal-content');
-            const form = document.getElementById('paypal-form');
-
-            modalContent.innerHTML = 
-                <p><strong>Producto:</strong> ${item}</p>
-                <p><strong>Precio:</strong> $${price} USD</p>
-            ;
-
-            form.querySelector('[name="item_name"]').value = item;
-            form.querySelector('[name="amount"]').value = price;
-
+        function procesarPago(item, precio) {
+            var modal = document.getElementById("paypalModal");
             modal.style.display = "block";
+
+            setTimeout(function() {
+                alert('Pago realizado para ' + item + ' por $' + precio + ' USD');
+                modal.style.display = "none";
+            }, 2000);
         }
 
         function cerrarModal() {
-            const modal = document.getElementById('paypalModal');
-            modal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('paypalModal');
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
+            document.getElementById("paypalModal").style.display = "none";
         }
     </script>
+
+    <!-- Script de Wompi -->
+    <script src="https://pagos.wompi.sv/js/wompi.pagos.js"></script>
 </body>
 </html>
