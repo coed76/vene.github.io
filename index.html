@@ -47,7 +47,7 @@
         .header-flash {
             position: relative;
             background-color: rgba(0, 0, 0, 0.5);
-            background-image: url('https://i.ibb.co/0F9st1y/Picsart-24-11-13-07-55-07-794.png');
+            background-image: url('/api/placeholder/400/320');
             background-size: cover;
             background-position: center;
             color: white;
@@ -270,6 +270,10 @@
                 font-size: 36px;
             }
         }
+
+        .wompi_button_widget {
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -318,11 +322,13 @@
                     <p class="tipo">1 año</p>
                     <p class="costo">$10 USD</p>
                     <button class="paypal-button" onclick="procesarPago('Licencia 1 Año - 1 Equipo', 10)">Pagar con PayPal</button>
+                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka"></div>
                 </div>
                 <div class="precio">
                     <p class="tipo">Permanente</p>
                     <p class="costo">$15 USD</p>
                     <button class="paypal-button" onclick="procesarPago('Licencia Permanente - 1 Equipo', 15)">Pagar con PayPal</button>
+                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka"></div>
                 </div>
             </div>
 
@@ -332,12 +338,14 @@
                 <div class="precio">
                     <p class="tipo">1 año</p>
                     <p class="costo">$19 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia 1 Año - 2 Equipos', 15)">Pagar con PayPal</button>
+                    <button class="paypal-button" onclick="procesarPago('Licencia 1 Año - 2 Equipos', 19)">Pagar con PayPal</button>
+                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka"></div>
                 </div>
                 <div class="precio">
                     <p class="tipo">Permanente</p>
                     <p class="costo">$29 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia Permanente - 2 Equipos', 20)">Pagar con PayPal</button>
+                    <button class="paypal-button" onclick="procesarPago('Licencia Permanente - 2 Equipos', 29)">Pagar con PayPal</button>
+                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka"></div>
                 </div>
             </div>
 
@@ -347,18 +355,20 @@
                 <div class="precio">
                     <p class="tipo">1 año</p>
                     <p class="costo">$26 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia 1 Año - 3 Equipos', 20)">Pagar con PayPal</button>
+                    <button class="paypal-button" onclick="procesarPago('Licencia 1 Año - 3 Equipos', 26)">Pagar con PayPal</button>
+                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka"></div>
                 </div>
                 <div class="precio">
                     <p class="tipo">Permanente</p>
                     <p class="costo">$38 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia Permanente - 3 Equipos', 25)">Pagar con PayPal</button>
+                    <button class="paypal-button" onclick="procesarPago('Licencia Permanente - 3 Equipos', 38)">Pagar con PayPal</button>
+                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <img src="https://i.ibb.co/DMq1Rty/Picsart-24-11-13-11-14-54-899.png" alt="Imagen Promocional" style="width:100%; max-width:600px; display:block; margin:auto;">
+    <img src="/api/placeholder/600/400" alt="Imagen Promocional" style="width:100%; max-width:600px; display:block; margin:auto;">
 
     <div id="paypalModal" class="modal">
         <div class="modal-content">
@@ -416,5 +426,6 @@
             }
         }
     </script>
+    <script src="https://pagos.wompi.sv/js/wompi.pagos.js"></script>
 </body>
 </html>
