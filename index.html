@@ -288,7 +288,8 @@
         </div>
     </div>
 
-    <!-- Scripts -->
+<!-- Scripts -->
+    <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
     <script>
         // Menú móvil
         function toggleMenu() {
@@ -306,16 +307,46 @@
             });
         });
 
-        // Procesamiento de pago
+        // Procesamiento de pago con PayPal
         function procesarPago(item, precio) {
             const modal = document.getElementById("paypalModal");
             modal.classList.remove('hidden');
 
-            // Simular procesamiento
-            setTimeout(function() {
-                alert('Pago realizado para ' + item + ' por $' + precio + ' USD');
-                cerrarModal();
-            }, 2000);
+            // Crear el formulario de PayPal
+            const form = document.createElement('form');
+            form.method = 'post';
+            form.action = 'https://www.paypal.com/cgi-bin/webscr';
+
+            // Configurar los campos del formulario
+            const campos = {
+                'cmd': '_xclick',
+                'business': 'servpaypa3@gmail.com',
+                'item_name': item,
+                'amount': precio,
+                'currency_code': 'USD',
+                'return': window.location.href,
+                'cancel_return': window.location.href,
+                'notify_url': window.location.href,
+                'no_shipping': '1',
+                'no_note': '1'
+            };
+
+            // Agregar los campos al formulario
+            for (let nombre in campos) {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = nombre;
+                input.value = campos[nombre];
+                form.appendChild(input);
+            }
+
+            // Agregar el formulario al documento y enviarlo
+            document.body.appendChild(form);
+            form.submit();
+            document.body.removeChild(form);
+
+            // Cerrar el modal después de un breve delay
+            setTimeout(cerrarModal, 1000);
         }
 
         function cerrarModal() {
