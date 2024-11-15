@@ -3,401 +3,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Licencias IBOPLAYER</title>
+    <title>Licencias IBOPLAYER - Premium</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #4f46e5;
+            --secondary-color: #1e40af;
+            --accent-color: #ec4899;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            scroll-behavior: smooth;
         }
 
         .ticker-wrap {
             position: fixed;
             top: 0;
             width: 100%;
-            height: 30px;
-            background-color: rgba(255, 255, 0, 0.65);
+            height: 40px;
+            background: linear-gradient(90deg, rgba(255,255,0,0.9), rgba(255,255,0,0.7));
             overflow: hidden;
             z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .ticker {
             display: inline-block;
             white-space: nowrap;
             padding-right: 100%;
-            animation: ticker 20s linear infinite;
+            animation: ticker 25s linear infinite;
         }
 
         .ticker span {
-            color: red;
+            color: #dc2626;
             font-weight: bold;
             display: inline-block;
-            padding: 5px 10px;
+            padding: 10px 20px;
+            text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
         }
 
         @keyframes ticker {
-            0% {
-                transform: translate3d(0, 0, 0);
-            }
-            100% {
-                transform: translate3d(-100%, 0, 0);
-            }
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
         }
 
         .header-flash {
             position: relative;
-            background-color: rgba(0, 0, 0, 0.5);
-            background-image: url('https://i.ibb.co/0F9st1y/Picsart-24-11-13-07-55-07-794.png');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://i.ibb.co/0F9st1y/Picsart-24-11-13-07-55-07-794.png');
             background-size: cover;
             background-position: center;
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        #particle-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .logo {
-            font-size: 72px;
-            font-weight: bold;
-            margin-top: -20px;
-        }
-
-        .cta-button {
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            display: none;
-        }
-
-        nav {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            background-color: red;
-            border: 2px solid black;
-            border-radius: 15px;
-            padding: 5px;
-        }
-
-        .menu-icon {
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .menu-icon div {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 5px 0;
-        }
-
-        .dropdown {
-            display: none;
-            position: absolute;
-            background-color: black;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            top: 40px;
-            left: 0;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #575757;
-        }
-
-        .menu-icon:hover + .dropdown, .dropdown:hover {
-            display: block;
-        }
-
-        .bienvenida {
-            text-align: center;
-            padding: 20px;
-            background-color: #f8f9fa;
-        }
-
-        .bienvenida h1 {
-            font-size: 30px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .bienvenida p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        .planes {
-            padding: 20px;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .planes-container {
+            background-attachment: fixed;
+            min-height: 80vh;
             display: flex;
-            justify-content: space-around;
-            margin-top: 30px;
+            align-items: center;
+            justify-content: center;
         }
 
-        .plan {
-            background-color: #f1f1f1;
-            border-radius: 8px;
-            padding: 20px;
-            width: 250px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin: 10px;
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
         }
 
-        .plan h3 {
-            font-size: 24px;
-            color: #333;
+        .plan-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .plan .precio {
-            margin: 10px 0;
-        }
-
-        .plan .costo {
-            font-size: 22px;
-            color: #28a745;
-        }
-
-        .paypal-button, .wompi_button_widget {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 5px 0;
-            font-size: 16px;
-            text-decoration: none;
-        }
-
-        .paypal-button {
-            background-color: #0070ba;
-            color: white;
-        }
-
-        .wompi_button_widget {
-            background-color: #0f5ab1;
-            color: white;
-        }
-
-        .resumen {
-            text-align: center;
-            padding: 20px;
-            background-color: #f8f9fa;
-            margin-top: 20px;
-        }
-
-        .contact-buttons a {
-            padding: 10px 15px;
-            margin: 5px;
-            background-color: #007bff;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
         }
 
-        .modal-content {
-            background-color: white;
-            margin: 15% auto;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 500px;
-            position: relative;
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
         }
 
-        .close {
-            position: absolute;
-            right: 15px;
-            top: 10px;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
-        .close:hover {
-            color: #999;
-        }
-
-        @media (max-width: 768px) {
-            .planes-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .plan {
-                width: 80%;
-                margin: 10px 0;
-            }
-
-            .logo {
-                font-size: 36px;
-            }
+        .feature-icon {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
 <body>
     <div class="ticker-wrap">
         <div class="ticker">
-            <span>LA COMPRA DE LICENCIA NO INCLUYE NINGÚN TIPO DE CONTENIDO</span>
+            <span>⚠️ LA COMPRA DE LICENCIA NO INCLUYE NINGÚN TIPO DE CONTENIDO ⚠️</span>
         </div>
     </div>
 
+    <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 mt-10">
+        <div class="glass-nav container mx-auto flex justify-between items-center px-4 py-2">
+            <div class="text-white font-bold text-xl">IBOPLAYER</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#planes" class="text-white hover:text-indigo-300 transition">Planes</a>
+                <a href="#caracteristicas" class="text-white hover:text-indigo-300 transition">Características</a>
+                <a href="#contacto" class="text-white hover:text-indigo-300 transition">Contacto</a>
+            </div>
+            <button class="md:hidden text-white" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-16 6h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
     <header class="header-flash">
-        <canvas id="particle-canvas"></canvas>
-        <div class="header-content">
-            <div class="logo">LICENCIAS IBOPLAYER</div>
-            <nav>
-                <div class="menu-icon">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <div class="dropdown">
-                    <div class="dropdown-content">
-                        <a href="#planes">Ver Planes</a>
-                        <a href="https://wa.me/+639302957535" target="_blank">WhatsApp</a>
-                        <a href="https://t.me/@dev0TH" target="_blank">Telegram</a>
-                        <a href="mailto:servpaypa3@gmail.com">Correo</a>
-                    </div>
-                </div>
-            </nav>
+        <div class="text-center text-white">
+            <h1 class="text-6xl font-bold mb-4">LICENCIAS IBOPLAYER</h1>
+            <p class="text-xl mb-8">La mejor experiencia de streaming en todos tus dispositivos</p>
+            <a href="#planes" class="bg-indigo-600 text-white px-8 py-3 rounded-full hover:bg-indigo-700 transition">
+                Ver Planes
+            </a>
         </div>
     </header>
 
-    <section class="bienvenida">
-        <h1>Activa IBOPLAYER en tu dispositivo favorito</h1>
-        <p>Compatibilidad con Smart TV, Roku, iPhone, Android y PC.</p>
-    </section>
-
-    <section id="planes" class="planes">
-        <div class="planes-container">
-            <div class="plan">
-                <h3>Para 1 Equipo</h3>
-                <p class="descripcion">Licencia para un solo dispositivo</p>
-                <div class="precio">
-                    <p class="tipo">1 año</p>
-                    <p class="costo">$10 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia 1 Año - 1 Equipo', 10)">Pagar con PayPal</button>
-                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
+    <section id="caracteristicas" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Características Premium</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="text-5xl mb-4 feature-icon">📱</div>
+                    <h3 class="text-xl font-semibold mb-2">Multi-dispositivo</h3>
+                    <p>Compatible con Smart TV, Roku, iPhone, Android y PC</p>
                 </div>
-                <div class="precio">
-                    <p class="tipo">Permanente</p>
-                    <p class="costo">$15 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia Permanente - 1 Equipo', 15)">Pagar con PayPal</button>
-                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
+                <div class="text-center p-6">
+                    <div class="text-5xl mb-4 feature-icon">🔒</div>
+                    <h3 class="text-xl font-semibold mb-2">Seguro</h3>
+                    <p>Activación inmediata y respaldo garantizado</p>
                 </div>
-            </div>
-
-            <div class="plan">
-                <h3>Para 2 Equipos</h3>
-                <p class="descripcion">Licencia para dos dispositivos</p>
-                <div class="precio">
-                    <p class="tipo">1 año</p>
-                    <p class="costo">$19 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia 1 Año - 2 Equipos', 19)">Pagar con PayPal</button>
-                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
-                </div>
-                <div class="precio">
-                    <p class="tipo">Permanente</p>
-                    <p class="costo">$29 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia Permanente - 2 Equipos', 29)">Pagar con PayPal</button>
-                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
-                </div>
-            </div>
-
-            <div class="plan">
-                <h3>Para 3 Equipos</h3>
-                <p class="descripcion">Licencia para tres dispositivos</p>
-                <div class="precio">
-                    <p class="tipo">1 año</p>
-                    <p class="costo">$26 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia 1 Año - 3 Equipos', 26)">Pagar con PayPal</button>
-                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
-                </div>
-                <div class="precio">
-                    <p class="tipo">Permanente</p>
-                    <p class="costo">$38 USD</p>
-                    <button class="paypal-button" onclick="procesarPago('Licencia Permanente - 3 Equipos', 38)">Pagar con PayPal</button>
-                    <div class="wompi_button_widget" data-url-pago="https://lk.wompi.sv/hSka">Pagar con Wompi</div>
+                <div class="text-center p-6">
+                    <div class="text-5xl mb-4 feature-icon">⚡</div>
+                    <h3 class="text-xl font-semibold mb-2">Alto Rendimiento</h3>
+                    <p>Experiencia fluida sin interrupciones</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="resumen">
-        <h3>Resumen</h3>
-        <p>Recuerda que puedes activar tu dispositivo de manera rápida y fácil. Cualquier consulta, contáctanos.</p>
-        <div class="contact-buttons">
-            <a href="https://wa.me/+639302957535" target="_blank">WhatsApp</a>
-            <a href="https://t.me/@dev0TH" target="_blank">Telegram</a>
+    <section id="planes" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Nuestros Planes</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="plan-card bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-2xl font-bold mb-4">1 Equipo</h3>
+                    <div class="mb-8">
+                        <div class="text-gray-600 mb-4">Licencia para un dispositivo</div>
+                        <div class="mb-6">
+                            <div class="text-gray-500">1 año</div>
+                            <div class="text-3xl font-bold text-indigo-600">$10 USD</div>
+                            <button class="w-full bg-indigo-600 text-white py-2 rounded-lg mt-4 hover:bg-indigo-700 transition" onclick="procesarPago('Licencia 1 Año - 1 Equipo', 10)">
+                                Pagar con PayPal
+                            </button>
+                            <div class="wompi_button_widget w-full bg-blue-600 text-white py-2 rounded-lg mt-2 hover:bg-blue-700 transition text-center cursor-pointer" data-url-pago="https://lk.wompi.sv/hSka">
+                                Pagar con Wompi
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-gray-500">Permanente</div>
+                            <div class="text-3xl font-bold text-indigo-600">$15 USD</div>
+                            <button class="w-full bg-indigo-600 text-white py-2 rounded-lg mt-4 hover:bg-indigo-700 transition" onclick="procesarPago('Licencia Permanente - 1 Equipo', 15)">
+                                Pagar con PayPal
+                            </button>
+                            <div class="wompi_button_widget w-full bg-blue-600 text-white py-2 rounded-lg mt-2 hover:bg-blue-700 transition text-center cursor-pointer" data-url-pago="https://lk.wompi.sv/hSka">
+                                Pagar con Wompi
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plan-card bg-white rounded-lg shadow-lg p-8 transform scale-105 border-2 border-indigo-600">
+                    <div class="absolute top-0 right-0 bg-indigo-600 text-white px-4 py-1 rounded-bl-lg">Popular</div>
+                    <h3 class="text-2xl font-bold mb-4">2 Equipos</h3>
+                    <div class="mb-8">
+                        <div class="text-gray-600 mb-4">Licencia para dos dispositivos</div>
+                        <div class="mb-6">
+                            <div class="text-gray-500">1 año</div>
+                            <div class="text-3xl font-bold text-indigo-600">$19 USD</div>
+                            <button class="w-full bg-indigo-600 text-white py-2 rounded-lg mt-4 hover:bg-indigo-700 transition" onclick="procesarPago('Licencia 1 Año - 2 Equipos', 19)">
+                                Pagar con PayPal
+                            </button>
+                            <div class="wompi_button_widget w-full bg-blue-600 text-white py-2 rounded-lg mt-2 hover:bg-blue-700 transition text-center cursor-pointer" data-url-pago="https://lk.wompi.sv/hSka">
+                                Pagar con Wompi
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-gray-500">Permanente</div>
+                            <div class="text-3xl font-bold text-indigo-600">$29 USD</div>
+                            <button class="w-full bg-indigo-600 text-white py-2 rounded-lg mt-4 hover:bg-indigo-700 transition" onclick="procesarPago('Licencia Permanente - 2 Equipos', 29)">
+                                Pagar con PayPal
+                            </button>
+                            <div class="wompi_button_widget w-full bg-blue-600 text-white py-2 rounded-lg mt-2 hover:bg-blue-700 transition text-center cursor-pointer" data-url-pago="https://lk.wompi.sv/hSka">
+                                Pagar con Wompi
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plan-card bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-2xl font-bold mb-4">3 Equipos</h3>
+                    <div class="mb-8">
+                        <div class="text-gray-600 mb-4">Licencia para tres dispositivos</div>
+                        <div class="mb-6">
+                            <div class="text-gray-500">1 año</div>
+                            <div class="text-3xl font-bold text-indigo-600">$26 USD</div>
+                            <button class="w-full bg-indigo-600 text-white py-2 rounded-lg mt-4 hover:bg-indigo-700 transition" onclick="procesarPago('Licencia 1 Año - 3 Equipos', 26)">
+                                Pagar con PayPal
+                            </button>
+                            <div class="wompi_button_widget w-full bg-blue-600 text-white py-2 rounded-lg mt-2 hover:bg-blue-700 transition text-center cursor-pointer" data-url-pago="https://lk.wompi.sv/hSka">
+                                Pagar con Wompi
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-gray-500">Permanente</div>
+                            <div class="text-3xl font-bold text-indigo-600">$38 USD</div>
+                            <button class="w-full bg-indigo-600 text-white py-2 rounded-lg mt-4 hover:bg-indigo-700 transition" onclick="procesarPago('Licencia Permanente - 3 Equipos', 38)">
+                                Pagar con PayPal
+                            </button>
+                            <div class="wompi_button_widget w-full bg-blue-600 text-white py-2 rounded-lg mt-2 hover:bg-blue-700 transition text-center cursor-pointer" data-url-pago="https://lk.wompi.sv/hSka">
+                                Pagar con Wompi
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <section id="contacto" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">¿Necesitas ayuda?</h2>
+            <p class="text-xl mb-8">Estamos aquí para asistirte en todo momento</p>
+            <div class="flex justify-center space-x-4">
+                <a href="https://wa.me/+639302957535" target="_blank" class="flex items-center bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.</antArtifact>
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+                    </svg>
+                    WhatsApp
+                </a>
+                <a href="https://t.me/@dev0TH" target="_blank" class="flex items-center bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"></path>
+                    </svg>
+                    Telegram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">© 2024 IBOPLAYER. Todos los derechos reservados.</p>
+            <p class="text-gray-400">La mejor experiencia de streaming en todos tus dispositivos</p>
+        </div>
+    </footer>
 
     <!-- Modal para PayPal -->
-    <div id="paypalModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="cerrarModal()">&times;</span>
-            <h2>Procesando pago...</h2>
-            <p>Tu pago se está procesando a través de PayPal. Por favor, espera un momento...</p>
+    <div id="paypalModal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 z-50">
+        <div class="modal-content bg-white rounded-lg p-8 max-w-md mx-auto mt-20 relative">
+            <span class="close absolute top-4 right-4 text-2xl cursor-pointer" onclick="cerrarModal()">&times;</span>
+            <h2 class="text-2xl font-bold mb-4">Procesando pago...</h2>
+            <div class="flex justify-center mb-4">
+                <div class="loading-spinner"></div>
+            </div>
+            <p class="text-center">Tu pago se está procesando a través de PayPal. Por favor, espera un momento...</p>
         </div>
     </div>
 
-    <!-- Script de PayPal -->
+    <!-- Scripts -->
     <script>
-        function procesarPago(item, precio) {
-            var modal = document.getElementById("paypalModal");
-            modal.style.display = "block";
+        // Menú móvil
+        function toggleMenu() {
+            const nav = document.querySelector('nav div:last-child');
+            nav.classList.toggle('hidden');
+        }
 
+        // Animación de scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Procesamiento de pago
+        function procesarPago(item, precio) {
+            const modal = document.getElementById("paypalModal");
+            modal.classList.remove('hidden');
+
+            // Simular procesamiento
             setTimeout(function() {
                 alert('Pago realizado para ' + item + ' por $' + precio + ' USD');
-                modal.style.display = "none";
+                cerrarModal();
             }, 2000);
         }
 
         function cerrarModal() {
-            document.getElementById("paypalModal").style.display = "none";
+            document.getElementById("paypalModal").classList.add('hidden');
         }
+
+        // Cerrar modal con Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                cerrarModal();
+            }
+        });
     </script>
 
     <!-- Script de Wompi -->
